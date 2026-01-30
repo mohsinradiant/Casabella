@@ -211,12 +211,24 @@
         "cta": "VIEW ALL NEW ARRIVALS",
         "cta_link": "shopify://collections/all-products"
       }
+    },
+    "collection_strip_AQwXhb": {
+      "type": "collection-strip",
+      "name": "Collection Strip",
+      "settings": {
+        "section_heading": "Best Sellers",
+        "section_subheading": "Chosen repeatedly for modern Indian homes.",
+        "collection": "all-products",
+        "cta": "VIEW ALL BEST SELLERS",
+        "cta_link": "shopify://collections/all-products"
+      }
     }
   },
   "order": [
     "slideshow_d9r8Xy",
     "text_slider_7yWQ3W",
     "categories_adRPwq",
-    "collection_strip_NV8PfL"
+    "collection_strip_NV8PfL",
+    "collection_strip_AQwXhb"
   ]
 }
