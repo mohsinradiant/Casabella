@@ -1,15 +1,32 @@
+<link rel="stylesheet" href="{{ 'categories.css' | asset_url }}">
 <div class="categories-scroller-container">
-  <h2 class="categories-scroller-title">{{ section.settings.section_title }}</h2>
-  <div class="categories-scroller-wrapper">
-    {% for block in section.blocks %}
-      <div class="category-item">
-        {% if block.settings.image %}
-          <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.text }}">
-        {% endif %}
-        <p class="category-name">{{ block.settings.text }}</p>
-      </div>
-    {% endfor %}
+  <div class="page-width">
+    <h2 class="categories-scroller-title">{{ section.settings.section_title }}</h2>
+    <div class="categories-scroller-wrapper">
+      {% for block in section.blocks %}
+        <div class="category-item">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.text }}">
+          {% endif %}
+          <p class="category-name">{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
     <a href="{{ section.settings.cta_link }}" class="categories-scroller-cta">{{ section.settings.cta }}</a>
+  </div>
+  <div class="categories-scroller-container-bottom">
+    <img
+      class="categories-scroller-container-bottom-image_strip"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_455.png?v=1769756289"
+    >
+    <img
+      class="categories-scroller-container-bottom-image_rotating"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Mask_group.png?v=1769756308"
+    >
+    <img
+      class="categories-scroller-container-bottom-image_flower"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/dfsf_13.png?v=1769756309"
+    >
   </div>
 </div>
 

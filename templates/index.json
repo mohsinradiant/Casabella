@@ -107,38 +107,103 @@
         "speed": 80
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "categories_adRPwq": {
+      "type": "categories",
+      "blocks": {
+        "category_Rp8Wxn": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_5.png",
+            "text": "Wall Decor"
+          }
+        },
+        "category_ztJixK": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_6.png",
+            "text": "Mirrors and Lighting"
+          }
+        },
+        "category_fmDdbD": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_7.png",
+            "text": "The Wood Edit"
+          }
+        },
+        "category_TYjgdJ": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_8.png",
+            "text": "Jharokhas"
+          }
+        },
+        "category_CNVbJL": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_9.png",
+            "text": "Puja and Sacred Decor"
+          }
+        },
+        "category_MgJgza": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_10.png",
+            "text": "Boho/Minimal"
+          }
+        },
+        "category_CE9YbR": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_11.png",
+            "text": "Gifting"
+          }
+        },
+        "category_xP4UbE": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_11.png",
+            "text": "Gifting"
+          }
+        },
+        "category_Bahxj8": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_11.png",
+            "text": "Gifting"
+          }
+        },
+        "category_Lhmw3Y": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_11.png",
+            "text": "Gifting"
+          }
+        }
+      },
+      "block_order": [
+        "category_Rp8Wxn",
+        "category_ztJixK",
+        "category_fmDdbD",
+        "category_TYjgdJ",
+        "category_CNVbJL",
+        "category_MgJgza",
+        "category_CE9YbR",
+        "category_xP4UbE",
+        "category_Bahxj8",
+        "category_Lhmw3Y"
+      ],
+      "name": "Categories Scroller",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "section_title": "Explore Categories",
+        "cta": "VIEW ALL CATEGORIES",
+        "cta_link": "shopify://collections"
       }
     }
   },
   "order": [
     "slideshow_d9r8Xy",
     "text_slider_7yWQ3W",
-    "featured_collection"
+    "categories_adRPwq"
   ]
 }
