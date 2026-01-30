@@ -122,7 +122,12 @@
               </button>
               <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
                 <span class="svg-wrapper">
-                  {{- 'icon-search.svg' | inline_asset_content -}}
+                  {% comment %} {{- 'icon-search.svg' | inline_asset_content -}} {% endcomment %}
+                  <img
+                    class="icon icon-search"
+                    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/search.png?v=1769678350"
+                    class=""
+                  >
                 </span>
               </button>
             </div>
@@ -363,7 +368,7 @@
           "label": "t:sections.main-search.settings.columns_mobile.options__2.label"
         }
       ]
-    },    
+    },
     {
       "type": "header",
       "content": "t:sections.main-search.settings.header__1.content"

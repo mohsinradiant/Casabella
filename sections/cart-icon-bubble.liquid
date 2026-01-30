@@ -1,7 +1,24 @@
+{% comment %}
+  {% if cart == empty %}
+    <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+  {% else %}
+    <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+  {% endif %}
+{% endcomment %}
 {% if cart == empty %}
-  <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+  <span class="svg-wrapper">
+    <img
+      class="icon icon-cart-empty"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/cart.png?v=1769678350"
+    >
+  </span>
 {% else %}
-  <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+  <span class="svg-wrapper">
+    <img
+      class="icon icon-cart"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/cart.png?v=1769678350"
+    >
+  </span>
 {% endif %}
 
 <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
