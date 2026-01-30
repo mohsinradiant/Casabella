@@ -91,6 +91,66 @@
         {% endfor %}
       </div>
     {% endfor %}
+    {% for i in (1..2) %}
+      <div class="infinite-text-group">
+        {% for block in section.blocks %}
+          <div class="infinite-text-item">
+            {{ block.settings.text }}
+          </div>
+
+          <div class="infinite-text-separator">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/42ff3ce74e1df8d4ffe1ff56a104f5b3.png?v=1769752992"
+              alt="separator"
+              loading="lazy"
+            >
+          </div>
+        {% endfor %}
+        {% for block in section.blocks %}
+          <div class="infinite-text-item">
+            {{ block.settings.text }}
+          </div>
+
+          <div class="infinite-text-separator">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/42ff3ce74e1df8d4ffe1ff56a104f5b3.png?v=1769752992"
+              alt="separator"
+              loading="lazy"
+            >
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    {% for i in (1..2) %}
+      <div class="infinite-text-group">
+        {% for block in section.blocks %}
+          <div class="infinite-text-item">
+            {{ block.settings.text }}
+          </div>
+
+          <div class="infinite-text-separator">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/42ff3ce74e1df8d4ffe1ff56a104f5b3.png?v=1769752992"
+              alt="separator"
+              loading="lazy"
+            >
+          </div>
+        {% endfor %}
+        {% for block in section.blocks %}
+          <div class="infinite-text-item">
+            {{ block.settings.text }}
+          </div>
+
+          <div class="infinite-text-separator">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/42ff3ce74e1df8d4ffe1ff56a104f5b3.png?v=1769752992"
+              alt="separator"
+              loading="lazy"
+            >
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
   </div>
 </div>
 <img
@@ -106,7 +166,7 @@
       "id": "speed",
       "label": "Scroll Speed (seconds)",
       "min": 10,
-      "max": 80,
+      "max": 500,
       "step": 2,
       "default": 30
     }
