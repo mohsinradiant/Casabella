@@ -47,6 +47,66 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "text_slider_7yWQ3W": {
+      "type": "text-slider",
+      "blocks": {
+        "text_XYVmzW": {
+          "type": "text",
+          "settings": {
+            "text": "Premium"
+          }
+        },
+        "text_Ekh3tL": {
+          "type": "text",
+          "settings": {
+            "text": "Timeless"
+          }
+        },
+        "text_pE7iwU": {
+          "type": "text",
+          "settings": {
+            "text": "Refined"
+          }
+        },
+        "text_VHe3br": {
+          "type": "text",
+          "settings": {
+            "text": "Luxury"
+          }
+        },
+        "text_4YBPKc": {
+          "type": "text",
+          "settings": {
+            "text": "Timeless"
+          }
+        },
+        "text_eDQgyw": {
+          "type": "text",
+          "settings": {
+            "text": "Handcrafted"
+          }
+        },
+        "text_dxRYrx": {
+          "type": "text",
+          "settings": {
+            "text": "Heirloom"
+          }
+        }
+      },
+      "block_order": [
+        "text_XYVmzW",
+        "text_Ekh3tL",
+        "text_pE7iwU",
+        "text_VHe3br",
+        "text_4YBPKc",
+        "text_eDQgyw",
+        "text_dxRYrx"
+      ],
+      "name": "Infinite Text Slider",
+      "settings": {
+        "speed": 80
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -78,6 +138,7 @@
   },
   "order": [
     "slideshow_d9r8Xy",
+    "text_slider_7yWQ3W",
     "featured_collection"
   ]
 }

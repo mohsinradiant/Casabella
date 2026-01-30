@@ -1,50 +1,60 @@
 {% style %}
-  .infinite-text-slider {
-    width: 100%;
-    overflow: hidden;
-    background: {{ section.settings.bg_color }};
-    padding: {{ section.settings.padding_y }}px 0;
+  #shopify-section-template--20374774055090__text_slider_7yWQ3W{
+          display: flex;
+      flex-direction: column;
   }
+      .infinite-text-slider {
+        width: 100%;
+        overflow-x: hidden;
+        background: #660103;
+        padding: 18px 0 9px 0;
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      }
 
-  .infinite-text-track {
-    display: flex;
-    width: max-content;
-    animation: scroll-left {{ section.settings.speed }}s linear infinite;
-  }
+      .infinite-text-track {
+        display: flex;
+        width: max-content;
+        animation: scroll-left {{ section.settings.speed }}s linear infinite;
+      }
 
-  .infinite-text-group {
-    display: flex;
-    align-items: center;
-  }
+      .infinite-text-group {
+        display: flex;
+        align-items: center;
+      }
 
-  .infinite-text-item {
-    font-size: {{ section.settings.font_size }}px;
-    font-weight: {{ section.settings.font_weight }};
-    color: {{ section.settings.text_color }};
-    white-space: nowrap;
-    padding: 0 {{ section.settings.text_spacing }}px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+      .infinite-text-item {
+        font-weight: 100;
+        color: #fff;
+        white-space: nowrap;
+        padding: 0 40px;
+        letter-spacing: 0;
+        font-family: 'Ethnic', sans-serif;
+        font-size: 14px;
+      }
 
-  .infinite-text-separator {
-    display: flex;
-    align-items: center;
-  }
+      .infinite-text-separator {
+        display: flex;
+        align-items: center;
+      }
 
-  .infinite-text-separator img {
-    height: {{ section.settings.separator_height }}px;
-    width: auto;
-  }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
+      .infinite-text-separator img {
+        height: 10px;
+        width: auto;
+      }
+    .infinite-text-slider-bottom-image{
+        width: 100%;
     }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
 {% endstyle %}
 
 <div class="infinite-text-slider">
@@ -56,78 +66,39 @@
             {{ block.settings.text }}
           </div>
 
-          {% unless forloop.last %}
-            <div class="infinite-text-separator">
-              <img
-                src="{{ section.settings.separator_image }}"
-                alt="separator"
-                loading="lazy"
-              >
-            </div>
-          {% endunless %}
+          <div class="infinite-text-separator">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/42ff3ce74e1df8d4ffe1ff56a104f5b3.png?v=1769752992"
+              alt="separator"
+              loading="lazy"
+            >
+          </div>
+        {% endfor %}
+        {% for block in section.blocks %}
+          <div class="infinite-text-item">
+            {{ block.settings.text }}
+          </div>
+
+          <div class="infinite-text-separator">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/42ff3ce74e1df8d4ffe1ff56a104f5b3.png?v=1769752992"
+              alt="separator"
+              loading="lazy"
+            >
+          </div>
         {% endfor %}
       </div>
     {% endfor %}
   </div>
 </div>
-
+<img
+  src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_456.png?v=1769753473"
+  class="infinite-text-slider-bottom-image"
+>
 {% schema %}
 {
   "name": "Infinite Text Slider",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "separator_image",
-      "label": "Separator Image"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#5b0d0d"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "font_size",
-      "label": "Font Size",
-      "min": 12,
-      "max": 40,
-      "step": 1,
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "font_weight",
-      "label": "Font Weight",
-      "min": 300,
-      "max": 900,
-      "step": 100,
-      "default": 600
-    },
-    {
-      "type": "range",
-      "id": "text_spacing",
-      "label": "Text Horizontal Spacing",
-      "min": 8,
-      "max": 40,
-      "step": 2,
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "separator_height",
-      "label": "Separator Height (px)",
-      "min": 10,
-      "max": 60,
-      "step": 2,
-      "default": 24
-    },
     {
       "type": "range",
       "id": "speed",
@@ -136,15 +107,6 @@
       "max": 80,
       "step": 2,
       "default": 30
-    },
-    {
-      "type": "range",
-      "id": "padding_y",
-      "label": "Vertical Padding (px)",
-      "min": 0,
-      "max": 60,
-      "step": 4,
-      "default": 12
     }
   ],
   "blocks": [
