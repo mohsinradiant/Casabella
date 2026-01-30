@@ -5,7 +5,7 @@
   color: rgb(var(--color-foreground));
 }
 
-.price > * {
+.price>* {
   display: inline-block;
   vertical-align: top;
 }
@@ -20,11 +20,17 @@
 
 .price .price-item {
   display: inline-block;
-  margin: 0 1rem 0 0;
+  margin-right: 7px;
+  font-size: 13px;
+  letter-spacing: 0;
+  font-weight: 600;
 }
 
 .price__regular .price-item--regular {
   margin-right: 0;
+  font-size: 13px;
+  letter-spacing: 0;
+  font-weight: 600;
 }
 
 .price:not(.price--show-badge) .price-item--last:last-of-type {
@@ -88,6 +94,7 @@
   text-decoration: line-through;
   color: rgba(var(--color-foreground), 0.75);
   font-size: 1.3rem;
+  color: #8F8F8F;
 }
 
 .unit-price {

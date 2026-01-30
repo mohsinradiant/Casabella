@@ -1,0 +1,270 @@
+/* ================================
+   COLLECTION STRIP (ROOT)
+================================ */
+
+.collection-strip {
+    padding: 40px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ================================
+   HEADINGS
+================================ */
+
+.collection-strip .section-heading {
+    text-align: center;
+    color: #5A1E2B;
+    font-size: 42px;
+    margin: 0;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.collection-strip .section-subheading {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 0;
+    color: #5A1E2B;
+    margin-bottom: 30px;
+    font-weight: 100;
+}
+
+/* ================================
+   SCROLLER AREA
+================================ */
+
+.collection-strip-relative {
+    position: relative;
+    width: 100%;
+}
+
+.collection-strip-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+/* hide scrollbar */
+.collection-strip-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.collection-strip-wrapper {
+    scrollbar-width: none;
+}
+
+/* product card wrapper */
+.collection-strip-item {
+    width: 184px;
+    flex-shrink: 0;
+}
+
+/* ================================
+   ARROWS (SCOPED)
+================================ */
+
+.collection-strip .scroller-arrow {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.collection-strip .scroller-arrow.left {
+    left: -11px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.collection-strip .scroller-arrow.right {
+    right: -11px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.collection-strip .scroller-arrow::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: solid #5A1E2B;
+    border-width: 0 1px 1px 0;
+    display: block;
+    margin: auto;
+}
+
+.collection-strip .scroller-arrow.left::after {
+    transform: rotate(135deg);
+}
+
+.collection-strip .scroller-arrow.right::after {
+    transform: rotate(-45deg);
+}
+
+/* ================================
+   DOTS (CENTERED ACTIVE)
+================================ */
+
+.collection-strip .collection-dots {
+    margin: 18px auto 0;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.collection-strip .collection-dots-track {
+    display: flex;
+    gap: 8px;
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+.collection-strip .collection-dots button {
+    all: unset;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #984B5B;
+    opacity: 0.5;
+    cursor: pointer;
+    flex-shrink: 0;
+    transform: scale(0.9);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.collection-strip .collection-dots button.active {
+    background-color: #984B5B;
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.collection-strip .collection-dots button.prev,
+.collection-strip .collection-dots button.next {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+/* ================================
+   CTA
+================================ */
+
+.collection-strip .collection-strip-cta {
+    display: block;
+    text-align: center;
+    margin: 30px auto 20px;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #C36075;
+}
+
+/* ================================
+   BOTTOM DECOR
+================================ */
+
+.collection-strip-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.collection-strip-bottom-strip {
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.collection-strip-bottom-rotating {
+    width: 160px;
+    position: absolute;
+    bottom: -64px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center;
+    animation: rotate-vector 15s linear infinite;
+    z-index: 1;
+    will-change: transform;
+}
+
+.collection-strip-bottom-flower {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+@keyframes rotate-vector {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+.section_flower_left {
+    position: absolute;
+    left: -150px;
+    bottom: 10%;
+    width: 300px;
+}
+
+.section_flower_right {
+    position: absolute;
+    right: -150px;
+    top: 10%;
+    width: 300px;
+}
+
+.card__inner {
+    aspect-ratio: 233 / 311;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card__inner-top_decoration-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.card__heading.h5 {
+    font-family: 'Outfit';
+    letter-spacing: 0;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+    .collection-strip-wrapper {
+        padding: 10px 20px;
+    }
+
+    .collection-strip-item {
+        width: 240px;
+    }
+
+    .collection-strip .scroller-arrow {
+        display: none;
+    }
+}

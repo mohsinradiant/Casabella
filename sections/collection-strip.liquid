@@ -1,23 +1,118 @@
 {% assign lazy_load = true %}
 <link rel="stylesheet" href="{{ 'collection-strip.css' | asset_url }}">
-<div class="collection-strip-container">
-  <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
-  <p class="section-subheading">{{ section.settings.section_subheading }}</p>
-  {% for product in section.settings.collection.products limit: 7 %}
-    {% render 'card-product',
-      card_product: product,
-      media_aspect_ratio: section.settings.image_ratio,
-      image_shape: section.settings.image_shape,
-      lazy_load: lazy_load,
-      show_secondary_image: section.settings.show_secondary_image,
-      show_vendor: section.settings.show_vendor,
-      show_rating: section.settings.show_rating,
-      skip_styles: false,
-      section_id: section.id,
-      quick_add: section.settings.quick_add
-    %}
-  {% endfor %}
+
+<div class="collection-strip-container collection-strip">
+  <div class="page-width">
+    <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+    <p class="section-subheading">{{ section.settings.section_subheading }}</p>
+
+    <div class="collection-strip-relative">
+      <div class="collection-strip-wrapper" id="collectionStripScroller">
+        {% for product in section.settings.collection.products %}
+          <div class="collection-strip-item">
+            {% render 'card-product', card_product: product, lazy_load: lazy_load, section_id: section.id %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- arrows -->
+      <button class="scroller-arrow left" aria-label="Previous"></button>
+      <button class="scroller-arrow right" aria-label="Next"></button>
+    </div>
+
+    <!-- dots -->
+    <div class="collection-dots">
+      <div class="collection-dots-track" id="collectionDots"></div>
+    </div>
+
+    <a href="{{ section.settings.cta_link }}" class="collection-strip-cta">
+      {{ section.settings.cta }}
+    </a>
+  </div>
+  <img
+    class="section_flower_left"
+    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_left.png?v=1769766374"
+  >
+  <img
+    class="section_flower_right"
+    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_right.png?v=1769766386"
+  >
+  <!-- bottom decoration -->
+  <div class="collection-strip-bottom">
+    <img
+      class="collection-strip-bottom-strip"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_455.png?v=1769756289"
+    >
+    <img
+      class="collection-strip-bottom-rotating"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_459_1.png?v=1769766247"
+    >
+    <img
+      class="collection-strip-bottom-flower"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/dfsf_13.png?v=1769756309"
+    >
+  </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('.collection-strip');
+    if (!section) return;
+
+    const scroller = section.querySelector('#collectionStripScroller');
+    const dotsTrack = section.querySelector('#collectionDots');
+    const prevBtn = section.querySelector('.scroller-arrow.left');
+    const nextBtn = section.querySelector('.scroller-arrow.right');
+
+    const items = [...scroller.children];
+    if (!items.length) return;
+
+    const itemsPerSlide = 3;
+    const itemGap = 32;
+    const itemWidth = items[0].offsetWidth;
+    const slideWidth = (itemWidth + itemGap) * itemsPerSlide;
+
+    const totalSlides = Math.ceil(items.length / itemsPerSlide);
+    let currentSlide = 0;
+
+    /* create dots */
+    dotsTrack.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      if (i === 0) dot.classList.add('active');
+      dot.onclick = () => goToSlide(i);
+      dotsTrack.appendChild(dot);
+    }
+
+    const dots = [...dotsTrack.children];
+
+    function goToSlide(index) {
+      currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+      scroller.scrollTo({ left: slideWidth * currentSlide, behavior: 'smooth' });
+      updateDots();
+    }
+
+    function updateDots() {
+      dots.forEach((dot, i) => {
+        dot.classList.remove('active', 'prev', 'next');
+        if (i === currentSlide) dot.classList.add('active');
+        if (i === currentSlide - 1) dot.classList.add('prev');
+        if (i === currentSlide + 1) dot.classList.add('next');
+      });
+
+      /* PERFECT CENTERING (dynamic width safe) */
+      const activeDot = dots[currentSlide];
+      const containerCenter = dotsTrack.parentElement.clientWidth / 2;
+      const dotCenter = activeDot.offsetLeft + activeDot.offsetWidth / 2;
+
+      dotsTrack.style.transform = `translateX(${Math.round(containerCenter - dotCenter)}px)`;
+    }
+
+    nextBtn.onclick = () => goToSlide(currentSlide + 1);
+    prevBtn.onclick = () => goToSlide(currentSlide - 1);
+
+    updateDots();
+  });
+</script>
 {% schema %}
 {
   "name": "Collection Strip",
