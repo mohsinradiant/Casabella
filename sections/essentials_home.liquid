@@ -1,9 +1,21 @@
 <link rel="stylesheet" href="{{ 'essentials_home.css' | asset_url }}">
 <div class="essentials-strip-container essentials-strip">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_450.png?v=1770068573"
+    class="essentials-strip-bg-top-image"
+  >
+  <img
+    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Rectangle_471.jpg?v=1770065901"
+    class="essentials-strip-bg-image"
+  >
+  <img
+    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_455.png?v=1769756289"
+    class="essentials-strip-bg-bottom-image"
+  >
+
   <div class="page-width">
     <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
     <p class="section-subheading">{{ section.settings.section_subheading }}</p>
-
     <div class="essentials-strip-relative">
       {% for block in section.blocks %}
         <div class="essentials-strip-item">
