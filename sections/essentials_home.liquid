@@ -1,20 +1,23 @@
-{% assign lazy_load = true %}
 <link rel="stylesheet" href="{{ 'essentials_home.css' | asset_url }}">
-<div class="collection-strip-container collection-strip">
+<div class="essentials-strip-container essentials-strip">
   <div class="page-width">
     <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
     <p class="section-subheading">{{ section.settings.section_subheading }}</p>
 
-    <div class="collection-strip-relative">
-      <div class="collection-strip-wrapper" id="collectionStripScroller">
-        {% for product in section.settings.collection.products %}
-          <div class="collection-strip-item">
-            {% render 'card-product', card_product: product, lazy_load: lazy_load, section_id: section.id %}
-          </div>
-        {% endfor %}
-      </div>
+    <div class="essentials-strip-relative">
+      {% for block in section.blocks %}
+        <div class="essentials-strip-item">
+          <img src="{{block.settings.block_image | image_url }}">
+          <p>{{ block.settings.block_heading_1 }}</p>
+          <p>{{ block.settings.block_heading_2 }}</p>
+          <p>{{ block.settings.block_subheading }}</p>
+          <a href="{{ block.settings.block_url }}" class="essentials-strip-cta">
+            {{ block.settings.block_cta }}
+          </a>
+        </div>
+      {% endfor %}
     </div>
-    <a href="{{ section.settings.cta_link }}" class="collection-strip-cta">
+    <a href="{{ section.settings.cta_link }}" class="essentials-strip-cta">
       {{ section.settings.cta }}
     </a>
   </div>
@@ -57,11 +60,6 @@
       "label": "Section Subheading"
     },
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    },
-    {
       "type": "text",
       "id": "cta",
       "label": "CTA"
@@ -77,6 +75,11 @@
       "type": "essential_collection",
       "name": "Essential Collection",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Block Image"
+        },
         {
           "type": "text",
           "id": "block_heading_1",

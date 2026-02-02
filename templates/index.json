@@ -222,6 +222,54 @@
         "cta": "VIEW ALL BEST SELLERS",
         "cta_link": "shopify://collections/all-products"
       }
+    },
+    "essentials_home_JLPPQ6": {
+      "type": "essentials_home",
+      "blocks": {
+        "essential_collection_zCbWmK": {
+          "type": "essential_collection",
+          "settings": {
+            "block_heading_1": "Designed for",
+            "block_heading_2": "Modern Living",
+            "block_subheading": "Thoughtfully crafted accents designed to elevate contemporary living spaces.",
+            "block_cta": "Explore Home Decor",
+            "block_url": "all-products"
+          }
+        },
+        "essential_collection_UXjJzF": {
+          "type": "essential_collection",
+          "settings": {
+            "block_heading_1": "Designed for",
+            "block_heading_2": "Modern Living",
+            "block_subheading": "Thoughtfully crafted accents designed to elevate contemporary living spaces.",
+            "block_cta": "Explore Home Decor",
+            "block_url": "all-products"
+          }
+        },
+        "essential_collection_LBaarm": {
+          "type": "essential_collection",
+          "settings": {
+            "block_heading_1": "Designed for",
+            "block_heading_2": "Modern Living",
+            "block_subheading": "Thoughtfully crafted accents designed to elevate contemporary living spaces.",
+            "block_cta": "Explore Home Decor",
+            "block_url": "all-products"
+          }
+        }
+      },
+      "block_order": [
+        "essential_collection_zCbWmK",
+        "essential_collection_UXjJzF",
+        "essential_collection_LBaarm"
+      ],
+      "name": "Essentials Home",
+      "settings": {
+        "section_heading": "Handpicked Essentials",
+        "section_subheading": "Timeless designs rooted in tradition, selected for contemporary spaces.",
+        "collection": "",
+        "cta": "ALL HANDPICKED PRODUCTS",
+        "cta_link": "shopify://collections/all-products"
+      }
     }
   },
   "order": [
@@ -229,6 +277,7 @@
     "text_slider_7yWQ3W",
     "categories_adRPwq",
     "collection_strip_NV8PfL",
-    "collection_strip_AQwXhb"
+    "collection_strip_AQwXhb",
+    "essentials_home_JLPPQ6"
   ]
 }
