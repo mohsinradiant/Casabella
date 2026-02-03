@@ -332,6 +332,51 @@
         "section_heading": "Shop by Purpose",
         "section_subheading": "Thoughtfully curated pieces to complement how you live, celebrate, and create meaning at home."
       }
+    },
+    "home_brand_values_dpG8zz": {
+      "type": "home-brand_values",
+      "blocks": {
+        "brand_value_ebK8PY": {
+          "type": "brand_value",
+          "settings": {
+            "block_image": "shopify://shop_images/Mask_group_4e6db5b9-d441-423b-8773-7e3567bc847e.png",
+            "block_heading_1": "Handcrafted Quality",
+            "block_subheading": "Every piece is artisan-made using time-honored techniques & materials."
+          }
+        },
+        "brand_value_Phiwab": {
+          "type": "brand_value",
+          "settings": {
+            "block_image": "shopify://shop_images/Mask_group-1.png",
+            "block_heading_1": "Timeless Design",
+            "block_subheading": "Rooted in heritage, refined to suit contemporary homes effortlessly."
+          }
+        },
+        "brand_value_bGgJX8": {
+          "type": "brand_value",
+          "settings": {
+            "block_image": "shopify://shop_images/Mask_group-2.png",
+            "block_heading_1": "Thoughtful Curation",
+            "block_subheading": "Collections designed by purpose, space, and modern living needs."
+          }
+        },
+        "brand_value_ckyxhz": {
+          "type": "brand_value",
+          "settings": {
+            "block_image": "shopify://shop_images/Mask_group-3.png",
+            "block_heading_1": "Seamless Experience",
+            "block_subheading": "Effortless browsing, secure checkout, and reliable doorstep delivery."
+          }
+        }
+      },
+      "block_order": [
+        "brand_value_ebK8PY",
+        "brand_value_Phiwab",
+        "brand_value_bGgJX8",
+        "brand_value_ckyxhz"
+      ],
+      "name": "Brand Values",
+      "settings": {}
     }
   },
   "order": [
@@ -341,6 +386,7 @@
     "collection_strip_NV8PfL",
     "collection_strip_AQwXhb",
     "essentials_home_JLPPQ6",
-    "purpose_home_AtXGEy"
+    "purpose_home_AtXGEy",
+    "home_brand_values_dpG8zz"
   ]
 }
