@@ -7,7 +7,7 @@
           block.settings.video
           | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true
         }}
-        {% render 'card-product', card_product: block.settings.product, media_aspect_ratio: 'sqaure' %}
+        {% render 'card-product', card_product: block.settings.product, media_aspect_ratio: 'sqaure', quick_add: true %}
       </div>
     {% endfor %}
   </div>
