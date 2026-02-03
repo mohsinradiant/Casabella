@@ -11,12 +11,56 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "home_brand_values_URDKAd": {
+      "type": "home-brand_values",
+      "blocks": {
+        "brand_value_yaKnBL": {
+          "type": "brand_value",
+          "settings": {
+            "block_image": "shopify://shop_images/Mask_group_4e6db5b9-d441-423b-8773-7e3567bc847e.png",
+            "block_heading_1": "Handcrafted Quality",
+            "block_subheading": "Every piece is artisan-made using time-honored techniques & materials."
+          }
+        },
+        "brand_value_ywQNHw": {
+          "type": "brand_value",
+          "settings": {
+            "block_image": "shopify://shop_images/Mask_group-1.png",
+            "block_heading_1": "Timeless Design",
+            "block_subheading": "Rooted in heritage, refined to suit contemporary homes effortlessly."
+          }
+        },
+        "brand_value_LxPf9n": {
+          "type": "brand_value",
+          "settings": {
+            "block_image": "shopify://shop_images/Mask_group-2.png",
+            "block_heading_1": "Thoughtful Curation",
+            "block_subheading": "Collections designed by purpose, space, and modern living needs."
+          }
+        },
+        "brand_value_Twa3gY": {
+          "type": "brand_value",
+          "settings": {
+            "block_image": "shopify://shop_images/Mask_group-3.png",
+            "block_heading_1": "Seamless Experience",
+            "block_subheading": "Effortless browsing, secure checkout, and reliable doorstep delivery."
+          }
+        }
+      },
+      "block_order": [
+        "brand_value_yaKnBL",
+        "brand_value_ywQNHw",
+        "brand_value_LxPf9n",
+        "brand_value_Twa3gY"
+      ],
+      "name": "Brand Values",
+      "settings": {}
+    },
     "footer": {
       "type": "footer",
-      "disabled": true,
       "settings": {
-        "color_scheme": "scheme-1",
-        "newsletter_enable": true,
+        "color_scheme": "scheme-a4f268cd-da40-41e0-a40b-a21e7f9a2e4e",
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
         "show_social": true,
@@ -31,6 +75,7 @@
     }
   },
   "order": [
+    "home_brand_values_URDKAd",
     "footer"
   ]
 }
