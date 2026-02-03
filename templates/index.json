@@ -241,10 +241,10 @@
           "type": "essential_collection",
           "settings": {
             "block_image": "shopify://shop_images/Group_461.png",
-            "block_heading_1": "Designed for",
-            "block_heading_2": "Modern Living",
-            "block_subheading": "Thoughtfully crafted accents designed to elevate contemporary living spaces.",
-            "block_cta": "Explore Home Decor",
+            "block_heading_1": "Heritage in",
+            "block_heading_2": "Harmony",
+            "block_subheading": "Serene, handcrafted pieces for refined spiritual spaces and daily rituals.",
+            "block_cta": "Explore Sacred Decor",
             "block_url": "all-products"
           }
         },
@@ -252,10 +252,10 @@
           "type": "essential_collection",
           "settings": {
             "block_image": "shopify://shop_images/Group_460.png",
-            "block_heading_1": "Designed for",
-            "block_heading_2": "Modern Living",
-            "block_subheading": "Thoughtfully crafted accents designed to elevate contemporary living spaces.",
-            "block_cta": "Explore Home Decor",
+            "block_heading_1": "The Wood",
+            "block_heading_2": "Signatures",
+            "block_subheading": "Handcrafted wooden pieces celebrating timeless craftsmanship and modern form.",
+            "block_cta": "Discover The Wood Edit",
             "block_url": "all-products"
           }
         }

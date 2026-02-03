@@ -8,11 +8,6 @@
     src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Rectangle_471.jpg?v=1770065901"
     class="essentials-strip-bg-image"
   >
-  <img
-    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_455.png?v=1769756289"
-    class="essentials-strip-bg-bottom-image"
-  >
-
   <div class="page-width">
     <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
     <p class="section-subheading">{{ section.settings.section_subheading }}</p>
@@ -29,32 +24,34 @@
         </div>
       {% endfor %}
     </div>
-    <a href="{{ section.settings.cta_link }}" class="essentials-strip-cta">
+    <a href="{{ section.settings.cta_link }}" class="essentials-strip-bottom-cta">
       {{ section.settings.cta }}
     </a>
   </div>
-  <img
-    class="section_flower_left"
-    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_left.png?v=1769766374"
-  >
-  <img
-    class="section_flower_right"
-    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_right.png?v=1769766386"
-  >
-  <!-- bottom decoration -->
-  <div class="collection-strip-bottom">
+  <div class="essentials-overflow-hidden">
     <img
-      class="collection-strip-bottom-strip"
-      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_455.png?v=1769756289"
+      class="section_flower_left"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_left.png?v=1769766374"
     >
     <img
-      class="collection-strip-bottom-rotating"
-      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_459_1.png?v=1769766247"
+      class="section_flower_right"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_right.png?v=1769766386"
     >
-    <img
-      class="collection-strip-bottom-flower"
-      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/dfsf_13.png?v=1769756309"
-    >
+    <!-- bottom decoration -->
+    <div class="essentials-strip-bg-bottom-image">
+      <img
+        class="essentials-strip-bottom-strip"
+        src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_455.png?v=1769756289"
+      >
+      <img
+        class="collection-strip-bottom-rotating"
+        src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_459_1.png?v=1769766247"
+      >
+      <img
+        class="collection-strip-bottom-flower"
+        src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/dfsf_13.png?v=1769756309"
+      >
+    </div>
   </div>
 </div>
 {% schema %}
