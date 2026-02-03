@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="{{ 'purpose_home.css' | asset_url }}">
+<div class="purpose-strip-container">
+  <div class="page-width">
+    <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+    <p class="section-subheading">{{ section.settings.section_subheading }}</p>
+    <div class="purpose-strip-relative">
+      {% for block in section.blocks %}
+        <div class="purpose-strip-item"></div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="purpose-overflow-hidden">
+    <img
+      class="section_flower_left"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_left.png?v=1769766374"
+    >
+    <img
+      class="section_flower_right"
+      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_right.png?v=1769766386"
+    >
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Purpose Home",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "section_subheading",
+      "label": "Section Subheading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "essential_collection",
+      "name": "Essential Collection",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Block Image"
+        },
+        {
+          "type": "text",
+          "id": "block_heading_1",
+          "label": "Block Heading 1"
+        },
+        {
+          "type": "text",
+          "id": "block_heading_2",
+          "label": "Block Heading 2"
+        },
+        {
+          "type": "text",
+          "id": "block_subheading",
+          "label": "Block Subheading"
+        },
+        {
+          "type": "text",
+          "id": "block_cta",
+          "label": "Block CTA"
+        },
+        {
+          "type": "collection",
+          "id": "block_url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purpose Home"
+    }
+  ]
+}
+{% endschema %}
