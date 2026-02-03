@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="{{ 'shoppable_videos.css' | asset_url }}">
+<div class="shoppable_videos-container">
+  <div class="page-width">
+    {% for block in section.blocks %}
+      <div class="shoppable_videos-item">
+        {{
+          block.settings.video
+          | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true
+        }}
+        {% render 'card-product', card_product: block.settings.product, media_aspect_ratio: 'sqaure' %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Shoppable Videos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_caption",
+      "label": "Section Caption"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "section_cta",
+      "label": "Section CTA"
+    },
+    {
+      "type": "url",
+      "id": "section_cta_link",
+      "label": "Section CTA Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "shoppable_video",
+      "name": "Shoppable Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Block Video"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Block Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shoppable Videos"
+    }
+  ]
+}
+{% endschema %}
