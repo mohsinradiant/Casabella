@@ -1,0 +1,125 @@
+.purpose-strip-container {
+    position: relative;
+    padding-bottom: 90px;
+    overflow: hidden;
+}
+
+.purpose-strip-container .section_flower_right {
+    top: 4%;
+}
+
+.purpose-strip-container .section-heading {
+    text-align: center;
+    color: #5A1E2B;
+    font-size: 42px;
+    margin: 55px 0 0;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.purpose-strip-container .section-subheading {
+    text-align: center;
+    font-size: 16px;
+    margin: 10px auto 0;
+    color: #5A1E2B;
+    margin-bottom: 43px;
+    font-weight: 100;
+    opacity: .7;
+    max-width: 490px;
+    line-height: 1.2;
+}
+
+.purpose-strip-relative {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.purpose-strip-item {
+    display: flex;
+    width: 49%;
+    position: relative;
+    height: auto;
+    aspect-ratio: 245/116;
+}
+
+.purpose-strip-item img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.purpose-strip-item-text-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44%;
+}
+
+.purpose-strip-item-text-container p:nth-of-type(1) {
+    color: #5A1E2B;
+    font-size: 31px;
+    letter-spacing: 0;
+    line-height: 1;
+    font-family: 'Ethnic';
+    margin: 0;
+}
+
+.purpose-strip-item-text-container p:nth-of-type(2) {
+    color: #C36075;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 1;
+    font-family: 'Ethnic';
+    margin: 9px 0 0;
+}
+
+.purpose-strip-item-text-container p:nth-of-type(3) {
+    color: #2F181D;
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin: 10px 0 0;
+    opacity: 0.7;
+}
+
+.purpose-strip-item-text-container a {
+    display: block;
+    margin: 18px auto 0;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #C36075;
+    text-transform: uppercase;
+}
+
+.purpose-strip-relative-flower__left {
+    position: absolute;
+    left: -44px;
+    top: -38px;
+    z-index: -1;
+    width: 110px;
+}
+
+.purpose-strip-relative-flower__right {
+    position: absolute;
+    right: -44px;
+    bottom: -38px;
+    z-index: -1;
+    width: 110px;
+}
+
+.purpose-overflow-hidden {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}

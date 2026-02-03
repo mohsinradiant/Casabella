@@ -215,16 +215,16 @@
 
 .section_flower_left {
     position: absolute;
-    left: -150px;
+    left: -115px;
     bottom: 10%;
-    width: 300px;
+    width: 250px;
 }
 
 .section_flower_right {
     position: absolute;
-    right: -150px;
+    right: -115px;
     top: 10%;
-    width: 300px;
+    width: 250px;
 }
 
 .card__inner {

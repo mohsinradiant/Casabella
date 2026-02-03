@@ -272,6 +272,66 @@
         "cta": "ALL HANDPICKED PRODUCTS",
         "cta_link": "shopify://collections/all-products"
       }
+    },
+    "purpose_home_AtXGEy": {
+      "type": "purpose_home",
+      "blocks": {
+        "essential_collection_Ct4gVL": {
+          "type": "essential_collection",
+          "settings": {
+            "block_image": "shopify://shop_images/Group_467.png",
+            "block_heading_1": "Mirrors &",
+            "block_heading_2": "Lighting",
+            "block_subheading": "Light, reflection, and form—crafted to elevate everyday spaces.",
+            "block_cta": "Brighten Your Space",
+            "block_url": "all-products"
+          }
+        },
+        "essential_collection_wHnC9i": {
+          "type": "essential_collection",
+          "settings": {
+            "block_image": "shopify://shop_images/Group_468.png",
+            "block_heading_1": "Decor",
+            "block_heading_2": "Gifting",
+            "block_subheading": "Meaningful decor, thoughtfully chosen for celebrations and milestones.",
+            "block_cta": "EXPLORE GIFTS",
+            "block_url": "all-products"
+          }
+        },
+        "essential_collection_DkEYLE": {
+          "type": "essential_collection",
+          "settings": {
+            "block_image": "shopify://shop_images/Group_465.png",
+            "block_heading_1": "Wall Decor &",
+            "block_heading_2": "Jharokhas",
+            "block_subheading": "Light, reflection, and form—crafted to elevate everyday spaces.",
+            "block_cta": "VIEW PRODUCTS",
+            "block_url": "all-products"
+          }
+        },
+        "essential_collection_9qXrPb": {
+          "type": "essential_collection",
+          "settings": {
+            "block_image": "shopify://shop_images/Group_466.png",
+            "block_heading_1": "Decor Your",
+            "block_heading_2": "Living Area",
+            "block_subheading": "Meaningful decor, thoughtfully chosen for celebrations and milestones.",
+            "block_cta": "VIEW PRODUCTS",
+            "block_url": "all-products"
+          }
+        }
+      },
+      "block_order": [
+        "essential_collection_Ct4gVL",
+        "essential_collection_wHnC9i",
+        "essential_collection_DkEYLE",
+        "essential_collection_9qXrPb"
+      ],
+      "name": "Purpose Home",
+      "settings": {
+        "section_heading": "Shop by Purpose",
+        "section_subheading": "Thoughtfully curated pieces to complement how you live, celebrate, and create meaning at home."
+      }
     }
   },
   "order": [
@@ -280,6 +340,7 @@
     "categories_adRPwq",
     "collection_strip_NV8PfL",
     "collection_strip_AQwXhb",
-    "essentials_home_JLPPQ6"
+    "essentials_home_JLPPQ6",
+    "purpose_home_AtXGEy"
   ]
 }

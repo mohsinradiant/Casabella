@@ -4,8 +4,26 @@
     <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
     <p class="section-subheading">{{ section.settings.section_subheading }}</p>
     <div class="purpose-strip-relative">
+      <img
+        class="purpose-strip-relative-flower__left"
+        src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/dfsf_16.png?v=1770096885"
+      >
+      <img
+        class="purpose-strip-relative-flower__right"
+        src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/dfsf_17.png?v=1770096884"
+      >
       {% for block in section.blocks %}
-        <div class="purpose-strip-item"></div>
+        <div class="purpose-strip-item">
+          <img src="{{ block.settings.block_image | img_url:'master' }}">
+          <div class="purpose-strip-item-text-container">
+            <p class="purpose-strip-item-text__heading1">{{ block.settings.block_heading_1 }}</p>
+            <p class="purpose-strip-item-text__heading1">{{ block.settings.block_heading_2 }}</p>
+            <p class="purpose-strip-item-text__heading1">{{ block.settings.block_subheading }}</p>
+            <a href="{{ block.settings.block_url | url }}" class="purpose-strip-item-text__cta">
+              {{- block.settings.block_cta -}}
+            </a>
+          </div>
+        </div>
       {% endfor %}
     </div>
   </div>
