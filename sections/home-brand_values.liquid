@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="{{ 'brand_values.css' | asset_url }}">
+<div class="brand-values-container">
+  <div class="page-width">
+    {% for block in section.blocks %}
+      <div class="brand-values-item">
+        <img src="{{ block.settings.block_image | img_url:'master' }}">
+        <div class="brand-values-item-text-container">
+          <p>{{ block.settings.block_heading_1 }}</p>
+          <p>{{ block.settings.block_subheading }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Brand Values",
+  "blocks": [
+    {
+      "type": "brand_value",
+      "name": "Brand Value",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Block Image"
+        },
+        {
+          "type": "text",
+          "id": "block_heading_1",
+          "label": "Block Heading 1"
+        },
+        {
+          "type": "text",
+          "id": "block_subheading",
+          "label": "Block Subheading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Values"
+    }
+  ]
+}
+{% endschema %}
