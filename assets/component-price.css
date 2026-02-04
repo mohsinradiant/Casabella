@@ -23,14 +23,14 @@
   margin-right: 7px;
   font-size: 13px;
   letter-spacing: 0;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .price__regular .price-item--regular {
   margin-right: 0;
   font-size: 13px;
   letter-spacing: 0;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .price:not(.price--show-badge) .price-item--last:last-of-type {
@@ -95,6 +95,7 @@
   color: rgba(var(--color-foreground), 0.75);
   font-size: 1.3rem;
   color: #8F8F8F;
+  font-weight: 500;
 }
 
 .unit-price {
