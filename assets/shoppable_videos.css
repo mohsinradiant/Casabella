@@ -13,6 +13,7 @@
 .shoppable_videos-container .product-card-wrapper .card--standard {
     display: flex;
     gap: 12px;
+    position: relative;
 }
 
 .shoppable_videos-container .product-card-wrapper .card--standard .card__inner {
@@ -20,6 +21,36 @@
     min-width: 65px;
     height: 65px;
     border-radius: 12px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.shoppable_videos-container .product-card-wrapper .card--standard .card__information {
+    padding-left: 75px;
+    margin-bottom: 25px;
+}
+
+.shoppable_videos-container .product-card-wrapper .card--standard .quick-add__submit {
+    color: #5A1E2B;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0;
+    border: solid 1px #5A1E2B30;
+    transition: all ease-in 0.3s;
+}
+
+.shoppable_videos-container .product-card-wrapper .card--standard .quick-add__submit:hover {
+    color: #FFFFFF;
+    background-color: #5A1E2B;
+    border: solid 1px #5A1E2B;
+    transition: all ease-in 0.3s;
+}
+
+.shoppable_videos-container .product-card-wrapper .card--standard .button:after {
+    box-shadow: none;
+
 }
 
 .shoppable_videos-container .product-card-wrapper .card--standard .card__inner .card__inner-top_decoration-image {
@@ -64,6 +95,14 @@
     pointer-events: none;
 }
 
+.shoppable_videos-dots-track {
+    display: flex;
+    gap: 8px;
+    transition: transform 0.35s ease;
+    will-change: transform;
+    margin-left: -38px;
+}
+
 .shoppable_videos-container-bottom-image_flower {
     width: 100px;
     position: absolute;
@@ -90,7 +129,7 @@
     width: 100%;
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     z-index: 4;
 
 }

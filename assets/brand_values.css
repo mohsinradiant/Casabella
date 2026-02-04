@@ -18,10 +18,11 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
+    width: 24%;
 }
 
 .brand-values-item img {
-    width: 60px;
+    width: 55px;
 }
 
 .brand-values-item-text-container {
@@ -34,16 +35,16 @@
     color: #5A1E2B;
     font-family: 'Ethnic';
     font-size: 14px;
-    letter-spacing: 0;
     margin: 0;
     line-height: 1.3;
 }
 
 .brand-values-item-text-container p:nth-of-type(2) {
     color: #1D1A1B;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0;
     line-height: 1.3;
     margin: 0;
     opacity: .8;
+    font-weight: 400;
 }

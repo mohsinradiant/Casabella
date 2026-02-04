@@ -225,46 +225,70 @@
         "shoppable_video_QCyFLN": {
           "type": "shoppable_video",
           "settings": {
-            "video": "shopify://files/videos/Fast & furry-ous. Commissioned by Apple.Go behind the scenes of the cutest high-speed chase for .mp4",
-            "product": "white-gold-1-copy"
+            "video": "shopify://files/videos/Hard court. Harder questions. Commissioned by Apple.“In the world of balls, a match-winning tenn.mp4",
+            "product": "jewellery-2"
           }
         },
-        "shoppable_video_DeaYx4": {
+        "shoppable_video_fQUU7T": {
+          "type": "shoppable_video",
+          "settings": {
+            "video": "shopify://files/videos/“I’ve been photographing these starlings in their annual migration through Rome for a while now..mp4",
+            "product": "rose-gold-2"
+          }
+        },
+        "shoppable_video_xVmgH4": {
           "type": "shoppable_video",
           "settings": {
             "video": "shopify://files/videos/Fast & furry-ous. Commissioned by Apple.Go behind the scenes of the cutest high-speed chase for .mp4",
             "product": "white-gold-1-copy"
+          }
+        },
+        "shoppable_video_A9dj9w": {
+          "type": "shoppable_video",
+          "settings": {
+            "video": "shopify://files/videos/Hard court. Harder questions. Commissioned by Apple.“In the world of balls, a match-winning tenn.mp4",
+            "product": "jewellery-2"
           }
         },
         "shoppable_video_MxRfdN": {
           "type": "shoppable_video",
           "settings": {
-            "video": "shopify://files/videos/Fast & furry-ous. Commissioned by Apple.Go behind the scenes of the cutest high-speed chase for .mp4",
-            "product": "white-gold-1-copy"
+            "video": "shopify://files/videos/“I’ve been photographing these starlings in their annual migration through Rome for a while now..mp4",
+            "product": "rose-gold-2"
           }
         },
-        "shoppable_video_zUeJb7": {
+        "shoppable_video_fHURFP": {
           "type": "shoppable_video",
           "settings": {
             "video": "shopify://files/videos/Fast & furry-ous. Commissioned by Apple.Go behind the scenes of the cutest high-speed chase for .mp4",
             "product": "white-gold-1-copy"
           }
         },
-        "shoppable_video_3RBMkC": {
+        "shoppable_video_h43Kpi": {
           "type": "shoppable_video",
           "settings": {
-            "video": "shopify://files/videos/Fast & furry-ous. Commissioned by Apple.Go behind the scenes of the cutest high-speed chase for .mp4",
-            "product": "white-gold-1-copy"
+            "video": "shopify://files/videos/Hard court. Harder questions. Commissioned by Apple.“In the world of balls, a match-winning tenn.mp4",
+            "product": "jewellery-2"
+          }
+        },
+        "shoppable_video_H9dhkM": {
+          "type": "shoppable_video",
+          "settings": {
+            "video": "shopify://files/videos/“I’ve been photographing these starlings in their annual migration through Rome for a while now..mp4",
+            "product": "rose-gold-2"
           }
         }
       },
       "block_order": [
         "shoppable_video_4JWMaK",
         "shoppable_video_QCyFLN",
-        "shoppable_video_DeaYx4",
+        "shoppable_video_fQUU7T",
+        "shoppable_video_xVmgH4",
+        "shoppable_video_A9dj9w",
         "shoppable_video_MxRfdN",
-        "shoppable_video_zUeJb7",
-        "shoppable_video_3RBMkC"
+        "shoppable_video_fHURFP",
+        "shoppable_video_h43Kpi",
+        "shoppable_video_H9dhkM"
       ],
       "name": "Shoppable Videos",
       "settings": {
