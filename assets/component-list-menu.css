@@ -14,8 +14,11 @@
 }
 
 .list-menu__item--active {
-  text-decoration: underline;
   text-underline-offset: 0.3rem;
+  font-size: 11px !important;
+  text-decoration: none;
+  opacity: .7;
+  font-weight: 400;
 }
 
 .list-menu__item--active:hover {
