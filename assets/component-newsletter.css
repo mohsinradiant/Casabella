@@ -43,12 +43,16 @@
 }
 
 .newsletter-form__button {
-  width: 4.4rem;
-  margin: 0;
-  right: var(--inputs-border-width);
-  top: 0;
-  height: 100%;
+  margin: 10px 0 0;
+  width: 100%;
+  background-color: #fff !important;
+  color: #5A1E2B;
   z-index: 2;
+  border-radius: 12px;
+  padding: 18px;
+  font-weight: 700;
+  font-size: 9px;
+  letter-spacing: 0px;
 }
 
 .newsletter-form__button:focus-visible {
