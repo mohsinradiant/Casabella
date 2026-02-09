@@ -19,8 +19,37 @@
   }
 }
 
+.collection-hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .collection-hero__text-wrapper {
   flex-basis: 100%;
+}
+
+.collection-hero__background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.collection-hero__bottom_image {
+  position: absolute;
+  bottom: -19px;
+  width: 100%;
+  height: auto;
+}
+
+.collection-hero {
+  aspect-ratio: 1348 / 194;
+  position: relative;
+  margin-bottom: 35px;
 }
 
 @media screen and (min-width: 750px) {
@@ -37,17 +66,30 @@
 
 .collection-hero__title {
   margin: 2.5rem 0;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  line-height: .9;
+  font-size: 45px;
+
 }
 
-.collection-hero__title + .collection-hero__description {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.6rem;
+.collection-hero__title+.collection-hero__description {
   line-height: calc(1 + 0.5 / var(--font-body-scale));
+  text-align: center;
+  color: #fff;
+  font-weight: 200 !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-width: 100%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 18.7px !important;
 }
 
 @media screen and (min-width: 750px) {
-  .collection-hero__title + .collection-hero__description {
+  .collection-hero__title+.collection-hero__description {
     font-size: 1.8rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -73,8 +115,7 @@
 .collection-hero__image-container {
   border: var(--media-border-width) solid rgba(var(--color-foreground), var(--media-border-opacity));
   border-radius: var(--media-radius);
-  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
-    rgba(var(--color-shadow), var(--media-shadow-opacity));
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius) rgba(var(--color-shadow), var(--media-shadow-opacity));
 }
 
 @media screen and (max-width: 749px) {
