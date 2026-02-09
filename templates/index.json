@@ -207,9 +207,9 @@
       "settings": {
         "section_heading": "New Arrivals",
         "section_subheading": "Chosen repeatedly for modern Indian homes.",
-        "collection": "all-products",
+        "collection": "new-arrivals",
         "cta": "VIEW ALL NEW ARRIVALS",
-        "cta_link": "shopify://collections/all-products"
+        "cta_link": "shopify://collections/new-arrivals"
       }
     },
     "shoppable_videos_YUMtxG": {
@@ -304,9 +304,9 @@
       "settings": {
         "section_heading": "Best Sellers",
         "section_subheading": "Chosen repeatedly for modern Indian homes.",
-        "collection": "all-products",
+        "collection": "new-arrivals",
         "cta": "VIEW ALL BEST SELLERS",
-        "cta_link": "shopify://collections/all-products"
+        "cta_link": "shopify://collections/new-arrivals"
       }
     },
     "essentials_home_JLPPQ6": {
@@ -320,7 +320,7 @@
             "block_heading_2": "Modern Living",
             "block_subheading": "Thoughtfully crafted accents designed to elevate contemporary living spaces.",
             "block_cta": "Explore Home Decor",
-            "block_url": "all-products"
+            "block_url": "new-arrivals"
           }
         },
         "essential_collection_UXjJzF": {
@@ -331,7 +331,7 @@
             "block_heading_2": "Harmony",
             "block_subheading": "Serene, handcrafted pieces for refined spiritual spaces and daily rituals.",
             "block_cta": "Explore Sacred Decor",
-            "block_url": "all-products"
+            "block_url": "new-arrivals"
           }
         },
         "essential_collection_LBaarm": {
@@ -342,7 +342,7 @@
             "block_heading_2": "Signatures",
             "block_subheading": "Handcrafted wooden pieces celebrating timeless craftsmanship and modern form.",
             "block_cta": "Discover The Wood Edit",
-            "block_url": "all-products"
+            "block_url": "new-arrivals"
           }
         }
       },
@@ -356,7 +356,7 @@
         "section_heading": "Handpicked Essentials",
         "section_subheading": "Timeless designs rooted in tradition, selected for contemporary spaces.",
         "cta": "ALL HANDPICKED PRODUCTS",
-        "cta_link": "shopify://collections/all-products"
+        "cta_link": "shopify://collections/new-arrivals"
       }
     },
     "purpose_home_AtXGEy": {
@@ -370,7 +370,7 @@
             "block_heading_2": "Lighting",
             "block_subheading": "Light, reflection, and form—crafted to elevate everyday spaces.",
             "block_cta": "Brighten Your Space",
-            "block_url": "all-products"
+            "block_url": "new-arrivals"
           }
         },
         "essential_collection_wHnC9i": {
@@ -381,7 +381,7 @@
             "block_heading_2": "Gifting",
             "block_subheading": "Meaningful decor, thoughtfully chosen for celebrations and milestones.",
             "block_cta": "EXPLORE GIFTS",
-            "block_url": "all-products"
+            "block_url": "new-arrivals"
           }
         },
         "essential_collection_DkEYLE": {
@@ -392,7 +392,7 @@
             "block_heading_2": "Jharokhas",
             "block_subheading": "Light, reflection, and form—crafted to elevate everyday spaces.",
             "block_cta": "VIEW PRODUCTS",
-            "block_url": "all-products"
+            "block_url": "new-arrivals"
           }
         },
         "essential_collection_9qXrPb": {
@@ -403,7 +403,7 @@
             "block_heading_2": "Living Area",
             "block_subheading": "Meaningful decor, thoughtfully chosen for celebrations and milestones.",
             "block_cta": "VIEW PRODUCTS",
-            "block_url": "all-products"
+            "block_url": "new-arrivals"
           }
         }
       },
