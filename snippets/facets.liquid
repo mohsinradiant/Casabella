@@ -127,37 +127,41 @@
 
               {% case filter.type %}
                 {% when 'boolean', 'list' %}
-                  <details
+                  {% comment %} Filter dropdown logic commented out - filters always open {% endcomment %}
+                  <div
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
-                    {% if filter_type == 'vertical' and forloop.index == 1 %}
-                      open
-                    {% endif %}
                   >
-                    <summary
-                      class="facets__summary caption-large focus-offset"
-                      aria-label="{{ filter.label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
-                    >
-                      <div>
-                        <span class="facets__summary-label">
-                          {{- filter.label | escape }}
-                          {% comment %}
-                            {%- if filter_type == 'vertical' -%}
-                              <span class="facets__selected{% if filter.active_values.size == 0 %} hidden{% endif %}">
-                                ({{ filter.active_values.size }})</span
-                              >
-                            {%- endif -%}
-                          {% endcomment %}
-                        </span>
-                        {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
-                          <span class="facets__and-helptext">
-                            {{ 'products.facets.filter_and_operator_subtitle' | t }}
+                    {% comment %}
+                      <summary
+                        class="facets__summary caption-large focus-offset"
+                        aria-label="{{ filter.label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
+                      >
+                        <div>
+                          <span class="facets__summary-label">
+                            {{- filter.label | escape }}
                           </span>
-                        {%- endif -%}
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                      </div>
-                    </summary>
+                          {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
+                            <span class="facets__and-helptext">
+                              {{ 'products.facets.filter_and_operator_subtitle' | t }}
+                            </span>
+                          {%- endif -%}
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </div>
+                      </summary>
+                    {% endcomment %}
+                    <div
+                      class="facets__summary-label caption-large text-body"
+                      style="cursor: default; padding: 12px 0;"
+                    >
+                      {{- filter.label | escape }}
+                      {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
+                        <span class="facets__and-helptext">
+                          {{ 'products.facets.filter_and_operator_subtitle' | t }}
+                        </span>
+                      {%- endif -%}
+                    </div>
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
@@ -299,39 +303,44 @@
                         </show-more-button>
                       {%- endif %}
                     </div>
-                  </details>
+                  </div>
+                  {% comment %} End of always-open filter {% endcomment %}
                 {% when 'price_range' %}
-                  <details
+                  {% comment %} Price filter dropdown logic commented out - filters always open {% endcomment %}
+                  <div
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
-                    {% if filter_type == 'vertical' and forloop.index == 1 %}
-                      open
-                    {% endif %}
                   >
-                    <summary
-                      class="facets__summary caption-large focus-offset"
-                      aria-label="{{ filter.label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
-                    >
-                      <div>
-                        <span class="facets__summary-label">
-                          {{- filter.label | escape }}
-                          {% comment %}
-                            {%- if filter_type == 'vertical' -%}
-                              <span class="facets__selected{% if filter.active_values.size == 0 %} hidden{% endif %}">
-                                ({{ filter.active_values.size }})</span
-                              >
-                            {%- endif -%}
-                          {% endcomment %}
-                        </span>
-                        {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
-                          <span class="facets__and-helptext">
-                            {{ 'products.facets.filter_and_operator_subtitle' | t }}
+                    {% comment %}
+                      <summary
+                        class="facets__summary caption-large focus-offset"
+                        aria-label="{{ filter.label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
+                      >
+                        <div>
+                          <span class="facets__summary-label">
+                            {{- filter.label | escape }}
                           </span>
-                        {%- endif -%}
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                      </div>
-                    </summary>
+                          {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
+                            <span class="facets__and-helptext">
+                              {{ 'products.facets.filter_and_operator_subtitle' | t }}
+                            </span>
+                          {%- endif -%}
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </div>
+                      </summary>
+                    {% endcomment %}
+                    <div
+                      class="facets__summary-label caption-large text-body"
+                      style="cursor: default; padding: 12px 0;"
+                    >
+                      {{- filter.label | escape }}
+                      {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
+                        <span class="facets__and-helptext">
+                          {{ 'products.facets.filter_and_operator_subtitle' | t }}
+                        </span>
+                      {%- endif -%}
+                    </div>
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
@@ -374,15 +383,12 @@
                               assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
 
                               assign is_active = false
-                              assign is_disabled = true
+                              assign is_disabled = false
 
                               for value in filter.values
                                 if value.min_value.value == min_price and value.max_value.value == max_price
                                   if value.active
                                     assign is_active = true
-                                  endif
-                                  if value.count > 0
-                                    assign is_disabled = false
                                   endif
                                 endif
                               endfor
@@ -437,9 +443,80 @@
                         </show-more-button>
                       {%- endif %}
                     </div>
-                  </details>
+                  </div>
+                  {% comment %} End of always-open price filter {% endcomment %}
               {% endcase %}
             {%- endfor -%}
+
+            {% comment %} DISCOUNT FILTER - Dynamically calculated filter {% endcomment %}
+            {% assign discount_ranges = '0-10,10-20,20-30,30-100' | split: ',' %}
+            {% assign discount_labels = 'Up to 10% off,10-20% off,20-30% off,30% or more off' | split: ',' %}
+
+            {% comment %} Calculate which discount ranges have products {% endcomment %}
+            {%- liquid
+              assign discount_filter_id = 'discount-filter-' | append: section.id
+              assign has_products_for_discount = false
+            -%}
+
+            <div
+              id="Details-{{ discount_filter_id }}"
+              class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
+              data-index="discount"
+            >
+              <div
+                class="facets__summary-label caption-large text-body"
+                style="cursor: default; padding: 12px 0;"
+              >
+                Discount
+              </div>
+              <div
+                id="Facet-discount-{{ section.id }}"
+                class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
+              >
+                <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
+                  <legend class="visually-hidden">Discount</legend>
+                  <ul
+                    class="facets-layout facets-layout-list facets-layout-list--text{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
+                    role="list"
+                  >
+                    {%- for range in discount_ranges -%}
+                      {% liquid
+                        assign range_parts = range | split: '-'
+                        assign min_discount = range_parts[0] | times: 1
+                        assign max_discount = range_parts[1] | times: 1
+                        assign label = discount_labels[forloop.index0]
+                        assign input_id = 'Filter-discount-' | append: section.id | append: '-' | append: forloop.index
+                      %}
+                      <li class="list-menu__item facets__item">
+                        <label
+                          for="{{ input_id }}"
+                          class="facets__label facet-checkbox"
+                        >
+                          <input
+                            type="checkbox"
+                            name="discount_range"
+                            value="{{ range }}"
+                            id="{{ input_id }}"
+                            data-discount-filter="{{ range }}"
+                          >
+
+                          {{- 'square.svg' | inline_asset_content -}}
+
+                          <div class="svg-wrapper">
+                            {{- 'icon-checkmark.svg' | inline_asset_content -}}
+                          </div>
+
+                          <span class="facet-checkbox__text" aria-hidden="true">
+                            <span class="facet-checkbox__text-label">{{- label -}}</span>
+                          </span>
+                        </label>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </fieldset>
+              </div>
+            </div>
+            {% comment %} End of discount filter {% endcomment %}
           </div>
           {% comment %} Pills after filtes on filter type horizontal {% endcomment %}
           {%- if filter_type == 'horizontal' -%}
@@ -1087,3 +1164,64 @@
     </facet-filters-form>
   {%- endif -%}
 </div>
+
+<script>
+  {% comment %}
+    Discount Filter JavaScript Handler
+    Calculates discount percentage dynamically based on compare_at_price vs price
+    and filters products accordingly
+  {% endcomment %}
+  (function() {
+    const discountCheckboxes = document.querySelectorAll('input[data-discount-filter]');
+    const productItems = document.querySelectorAll('[data-product-item]');
+
+    function calculateDiscount(product) {
+      const compareAtPrice = parseFloat(product.dataset.compareAtPrice || 0);
+      const price = parseFloat(product.dataset.price || 0);
+
+      if (!compareAtPrice || compareAtPrice <= price) {
+        return 0;
+      }
+
+      const discount = ((compareAtPrice - price) / compareAtPrice) * 100;
+      return Math.round(discount);
+    }
+
+    function isProductInDiscountRange(discountPercent, rangeString) {
+      const [min, max] = rangeString.split('-').map(Number);
+      return discountPercent >= min && discountPercent <= max;
+    }
+
+    function filterByDiscount() {
+      const checkedRanges = Array.from(discountCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+
+      if (checkedRanges.length === 0) {
+        // Show all products if no discount filter selected
+        productItems.forEach(item => {
+          item.style.display = '';
+        });
+        return;
+      }
+
+      productItems.forEach(product => {
+        const discount = calculateDiscount(product);
+        const matches = checkedRanges.some(range =>
+          isProductInDiscountRange(discount, range)
+        );
+        product.style.display = matches ? '' : 'none';
+      });
+    }
+
+    // Event listeners for discount checkboxes
+    discountCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', filterByDiscount);
+    });
+
+    // Apply filter on page load if any checkboxes are pre-checked
+    if (discountCheckboxes.some(cb => cb.checked)) {
+      filterByDiscount();
+    }
+  })();
+</script>
