@@ -736,14 +736,16 @@
                 {% render 'icon-with-text', block: block %}
               {%- when 'product_highlights' -%}
                 <div class="product_highlights-container">
-                  <p>Product Highlights</p>
-                  {% for highlight in product.metafields.custom.product_highlights %}
+                  <p class="product_highlights-heading">Product Highlights</p>
+                  {% for highlight in product.metafields.custom.product_highlights.value %}
+                    <div class="product_highlights-value">
                     <img
                       src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/CheckCircleFill.png?v=1770760555"
                       alt="checkmark"
                       class="product_highlights-icon"
                     >
-                    <p>{{ highlight }}</p>
+                    <p class="product_highlights-text">{{ highlight }}</p>
+                    </div>
                   {% endfor %}
                 </div>
             {%- endcase -%}
