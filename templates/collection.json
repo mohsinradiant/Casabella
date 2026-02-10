@@ -12,8 +12,8 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "background_image": "shopify://shop_images/Screenshot_2026-02-10_013955.png",
-        "bottom_image": "shopify://shop_images/Screenshot_2026-02-10_014007.png",
+        "background_image": "shopify://shop_images/Rectangle_2.jpg",
+        "bottom_image": "shopify://shop_images/Group_456_1.png",
         "show_collection_description": true,
         "show_collection_image": true,
         "color_scheme": "scheme-1"
