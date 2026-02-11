@@ -455,6 +455,16 @@
                       {%- endif -%}
                     </volume-pricing>
                   {%- endif -%}
+                  {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+                  {%- if current_variant.inventory_management
+                    and current_variant.inventory_quantity > 0
+                    and current_variant.inventory_quantity <= 10
+                  -%}
+                    <p class="low-stock-warning">
+                      Only <span>{{ current_variant.inventory_quantity }} items</span> left!
+                    </p>
+                  {%- endif -%}
                 </div>
               {%- when 'popup' -%}
                 <modal-opener
@@ -739,12 +749,12 @@
                   <p class="product_highlights-heading">Product Highlights</p>
                   {% for highlight in product.metafields.custom.product_highlights.value %}
                     <div class="product_highlights-value">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/CheckCircleFill.png?v=1770760555"
-                      alt="checkmark"
-                      class="product_highlights-icon"
-                    >
-                    <p class="product_highlights-text">{{ highlight }}</p>
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/CheckCircleFill.png?v=1770760555"
+                        alt="checkmark"
+                        class="product_highlights-icon"
+                      >
+                      <p class="product_highlights-text">{{ highlight }}</p>
                     </div>
                   {% endfor %}
                 </div>
