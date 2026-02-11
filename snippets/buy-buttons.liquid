@@ -99,7 +99,7 @@
           </button>
           {%- if show_dynamic_checkout -%}
             {% comment %} {{ form | payment_button }} {% endcomment %}
-            <button type="submit" name="checkout" class="custom-buy-now">
+            <button type="button" class="custom-buy-now" id="BuyNowButton">
               <img
                 class="buy-buttons-icon"
                 src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Vector.png?v=1770760557"
@@ -107,6 +107,30 @@
               >
               Buy it now
             </button>
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const buyNowBtn = document.getElementById('BuyNowButton');
+
+                if (!buyNowBtn) return;
+
+                buyNowBtn.addEventListener('click', function () {
+                  const form = this.closest('form');
+                  const formData = new FormData(form);
+
+                  fetch('/cart/add.js', {
+                    method: 'POST',
+                    body: formData,
+                  })
+                    .then((response) => response.json())
+                    .then(() => {
+                      window.location.href = '/checkout';
+                    })
+                    .catch((error) => {
+                      console.error('Error:', error);
+                    });
+                });
+              });
+            </script>
           {%- endif -%}
         </div>
       {%- endform -%}
