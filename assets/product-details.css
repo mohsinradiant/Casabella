@@ -98,17 +98,25 @@
     margin-bottom: 25px;
 }
 
-.jm-review-widget--minimal-header {
-    padding-top: 0 !important
-}
-
-.jm-review-widget--minimal-header .jm-review-widget-minimal-header__title {
+.jm-review-widget-sidebar-header__sidebar .jm-review-widget-sidebar-header__title {
     font-family: 'Ethnic';
     font-weight: 400;
     color: #5A1E2B;
-    font-size: 40px;
-    text-align: center;
+    font-size: 30px;
 }
-.jm-stack--space-200{
-    width: 100%;
+
+.jm-review-widget--sidebar-header {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+#shopify-section-template--20374774218930__1770814844fea6e906 {
+    background-color: #F8F7F5;
+}
+
+.related-products__heading {
+    font-weight: 400;
+    color: #5A1E2B;
+    font-size: 36px;
+    text-align: center;
 }

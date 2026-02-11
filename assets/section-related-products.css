@@ -1,5 +1,7 @@
 .related-products {
   display: block;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
 }
 
 .related-products__heading {
