@@ -1193,6 +1193,36 @@ deferred-media {
   --color-button-text: var(--color-secondary-button-text);
 }
 
+.button--secondary {
+  background-color: #5A1E2B !important;
+  border-radius: 8px !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  align-items: center;
+}
+
+.button--secondary span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 9px;
+  justify-content: center;
+  line-height: .2;
+}
+
+.buy-buttons-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.button--secondary::before,
+.button--secondary::after {
+  display: none !important;
+}
+
 .button--tertiary {
   --alpha-button-background: 0;
   --alpha-button-border: 0.2;
@@ -1286,9 +1316,9 @@ button.shopify-payment-button__button--unbranded {
     0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background));
 }
 
-.button--secondary:after {
+/* .button--secondary:after {
   --border-opacity: var(--buttons-border-opacity);
-}
+} */
 
 .button:focus-visible,
 .button:focus,
