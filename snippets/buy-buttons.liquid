@@ -98,7 +98,15 @@
             {%- render 'loading-spinner' -%}
           </button>
           {%- if show_dynamic_checkout -%}
-            {{ form | payment_button }}
+            {% comment %} {{ form | payment_button }} {% endcomment %}
+            <button type="submit" name="checkout" class="custom-buy-now">
+              <img
+                class="buy-buttons-icon"
+                src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Vector.png?v=1770760557"
+                alt=""
+              >
+              Buy it now
+            </button>
           {%- endif -%}
         </div>
       {%- endform -%}
