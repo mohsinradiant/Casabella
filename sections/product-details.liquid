@@ -1,5 +1,39 @@
 {{ 'product-details.css' | asset_url | stylesheet_tag }}
-
+<div class="page-width">
+  <div class="product-details_pdp-container--inner">
+    <div class="product-details_pdp-left">
+      {% if product.metafields.custom.about_this_product or product.metafields.custom.perfect_for %}
+        <p class="product-details_pdp-left_heading">Description</p>
+        {% if product.metafields.custom.about_this_product %}
+          <p class="product-details_pdp-inner_heading">About this Product</p>
+          <p class="product-details_pdp-inner_content">{{ product.metafields.custom.about_this_product }}</p>
+        {% endif %}
+        {% if product.metafields.custom.perfect_for %}
+          <p class="product-details_pdp-inner_heading">Perfect for:</p>
+          <ul>
+            {% for text in product.metafields.custom.perfect_for.value %}
+              <li class="product-details_pdp-inner_content">{{ text }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endif %}
+    </div>
+    <hr class="product-details_pdp-divider">
+    <div class="product-details_pdp-right">
+      {% if product.metafields.custom.product_specifications %}
+        <p class="product-details_pdp-left_heading">Specifications</p>
+        {% if product.metafields.custom.product_specifications %}
+          {% for row in product.metafields.custom.product_specifications.value %}
+            <div class="product-details_pdp-right-row">
+              <p class="product-details_pdp-right-row-name">{{ row.name }}</p>
+              <p class="product-details_pdp-right-row-value">{{ row.value }}</p>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div>
 {% schema %}
 {
   "name": "Product details",

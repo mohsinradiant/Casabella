@@ -132,9 +132,12 @@
         name="previous"
         aria-label="{{ 'general.slider.previous_slide' | t }}"
       >
-        <span class="svg-wrapper">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
-        </span>
+        <img src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_433.png?v=1770214279">
+        {% comment %}
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        {% endcomment %}
       </button>
       <div class="slider-counter caption">
         <span class="slider-counter--current">1</span>
@@ -148,9 +151,15 @@
         name="next"
         aria-label="{{ 'general.slider.next_slide' | t }}"
       >
-        <span class="svg-wrapper">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
-        </span>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_433.png?v=1770214279"
+          style="transform: rotate(180deg);"
+        >
+        {% comment %}
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        {% endcomment %}
       </button>
     </div>
   </slider-component>
@@ -193,9 +202,13 @@
         aria-controls="GalleryThumbnails-{{ section.id }}"
         data-step="3"
       >
-        <span class="svg-wrapper">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
-        </span>
+        <img src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_433.png?v=1770214279">
+
+        {% comment %}
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        {% endcomment %}
       </button>
       <ul
         id="Slider-Thumbnails-{{ section.id }}"
@@ -323,9 +336,15 @@
         aria-controls="GalleryThumbnails-{{ section.id }}"
         data-step="3"
       >
-        <span class="svg-wrapper">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
-        </span>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_433.png?v=1770214279"
+          style="transform: rotate(180deg);"
+        >
+        {% comment %}
+          <span class="svg-wrapp er">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        {% endcomment %}
       </button>
     </slider-component>
   {%- endif -%}
