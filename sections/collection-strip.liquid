@@ -62,62 +62,62 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const section = document.querySelector('.collection-strip');
-    if (!section) return;
+    // Get all collection-strip sections
+    document.querySelectorAll('.collection-strip').forEach((section) => {
+      const scroller = section.querySelector('#collectionStripScroller');
+      const dotsTrack = section.querySelector('#collectionDots');
+      const prevBtn = section.querySelector('.scroller-arrow.left');
+      const nextBtn = section.querySelector('.scroller-arrow.right');
 
-    const scroller = section.querySelector('#collectionStripScroller');
-    const dotsTrack = section.querySelector('#collectionDots');
-    const prevBtn = section.querySelector('.scroller-arrow.left');
-    const nextBtn = section.querySelector('.scroller-arrow.right');
+      const items = [...scroller.children];
+      if (!items.length) return;
 
-    const items = [...scroller.children];
-    if (!items.length) return;
+      const itemsPerSlide = 3;
+      const itemGap = 32;
+      const itemWidth = items[0].offsetWidth;
+      const slideWidth = (itemWidth + itemGap) * itemsPerSlide;
 
-    const itemsPerSlide = 3;
-    const itemGap = 32;
-    const itemWidth = items[0].offsetWidth;
-    const slideWidth = (itemWidth + itemGap) * itemsPerSlide;
+      const totalSlides = Math.ceil(items.length / itemsPerSlide);
+      let currentSlide = 0;
 
-    const totalSlides = Math.ceil(items.length / itemsPerSlide);
-    let currentSlide = 0;
+      /* create dots */
+      dotsTrack.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToSlide(i);
+        dotsTrack.appendChild(dot);
+      }
 
-    /* create dots */
-    dotsTrack.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement('button');
-      if (i === 0) dot.classList.add('active');
-      dot.onclick = () => goToSlide(i);
-      dotsTrack.appendChild(dot);
-    }
+      const dots = [...dotsTrack.children];
 
-    const dots = [...dotsTrack.children];
+      function goToSlide(index) {
+        currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+        scroller.scrollTo({ left: slideWidth * currentSlide, behavior: 'smooth' });
+        updateDots();
+      }
 
-    function goToSlide(index) {
-      currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
-      scroller.scrollTo({ left: slideWidth * currentSlide, behavior: 'smooth' });
+      function updateDots() {
+        dots.forEach((dot, i) => {
+          dot.classList.remove('active', 'prev', 'next');
+          if (i === currentSlide) dot.classList.add('active');
+          if (i === currentSlide - 1) dot.classList.add('prev');
+          if (i === currentSlide + 1) dot.classList.add('next');
+        });
+
+        /* PERFECT CENTERING (dynamic width safe) */
+        const activeDot = dots[currentSlide];
+        const containerCenter = dotsTrack.parentElement.clientWidth / 2;
+        const dotCenter = activeDot.offsetLeft + activeDot.offsetWidth / 2;
+
+        dotsTrack.style.transform = `translateX(${Math.round(containerCenter - dotCenter)}px)`;
+      }
+
+      nextBtn.onclick = () => goToSlide(currentSlide + 1);
+      prevBtn.onclick = () => goToSlide(currentSlide - 1);
+
       updateDots();
-    }
-
-    function updateDots() {
-      dots.forEach((dot, i) => {
-        dot.classList.remove('active', 'prev', 'next');
-        if (i === currentSlide) dot.classList.add('active');
-        if (i === currentSlide - 1) dot.classList.add('prev');
-        if (i === currentSlide + 1) dot.classList.add('next');
-      });
-
-      /* PERFECT CENTERING (dynamic width safe) */
-      const activeDot = dots[currentSlide];
-      const containerCenter = dotsTrack.parentElement.clientWidth / 2;
-      const dotCenter = activeDot.offsetLeft + activeDot.offsetWidth / 2;
-
-      dotsTrack.style.transform = `translateX(${Math.round(containerCenter - dotCenter)}px)`;
-    }
-
-    nextBtn.onclick = () => goToSlide(currentSlide + 1);
-    prevBtn.onclick = () => goToSlide(currentSlide - 1);
-
-    updateDots();
+    });
   });
 </script>
 {% schema %}

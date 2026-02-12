@@ -7,7 +7,7 @@
 }
 
 .footer__content-top {
-  padding-bottom: 5rem;
+  padding-bottom: 3.5rem;
   display: block;
 }
 
@@ -38,11 +38,6 @@
     row-gap: 6rem;
     margin-bottom: 0;
   }
-}
-
-.footer__content-bottom {
-  border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
-  padding-top: 3rem;
 }
 
 .footer__content-bottom:only-child {
@@ -200,9 +195,91 @@
   width: 22%;
 }
 
+.footer-bottom-policies-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-bottom-policies-container-inner-1 {
+  display: flex;
+  text-transform: uppercase;
+  gap: 21px;
+  letter-spacing: 0;
+  border-top: solid 1px #ffffff30;
+  padding-top: 22px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 22px;
+  width: 100%;
+  border-bottom: solid 1px #ffffff30;
+}
+
+.footer-bottom-policies-container-inner-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
+  width: 100%;
+  border-bottom: solid 1px #ffffff30;
+}
+
+.footer-bottom-policies-container-inner-2 p {
+  font-size: 11.5px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.footer-policy-text {
+  margin: 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-bottom-policies-container-inner-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 2.5rem !important;
+  padding: 0;
+}
+
+.footer-bottom-policies-container-inner-3 p {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.footer-bottom-policies-container-inner-3 button {
+    background-color: #583f46;
+    color: #fff;
+    border: none;
+    display: flex;
+    gap: 5px;
+    padding: 10px 17px 10px 17px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 500px;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Outfit';
+}
+.footer-bottom-policies-container-inner-3 button img{
+  width: 10px;
+  height: auto;
+}
 .footer-block__subheading-newsletter {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 11.5px;
   color: #fff;
   line-height: 1.2;
   opacity: .7;
@@ -406,7 +483,7 @@
 @media screen and (min-width: 750px) {
   .footer-block__details-content .list-menu__item--link {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 11.5px;
   }
 
   .footer-block__details-content> :first-child .list-menu__item--link {
@@ -457,7 +534,7 @@
 
 .footer-block__brand-info .rte>*:last-child {
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
   color: #fff;
   line-height: 1.2;
 }
@@ -488,7 +565,7 @@
   margin-top: 22px;
   margin-bottom: 0;
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .footer-block__brand-info .footer__list-social.list-social .list-social__item:first-of-type a {
