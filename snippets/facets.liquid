@@ -513,6 +513,50 @@
               </div>
             </div>
             {% comment %} End of discount filter {% endcomment %}
+
+            <div
+              class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
+            >
+              <div
+                class="facets__summary-label caption-large text-body"
+                style="cursor: default; padding: 12px 0;"
+              >
+                ALL CATEGORIES
+              </div>
+              <div
+                class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
+              >
+                <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
+                  <legend class="visually-hidden">ALL CATEGORIES</legend>
+                  <ul
+                    class="facets-layout facets-layout-list facets-layout-list--text{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
+                    role="list"
+                  >
+                    {% if blocks != blank %}
+                      {% for block in blocks %}
+                        {% if block.type == 'product_category' %}
+                          {% assign category_url = block.settings.url %}
+
+                          <li class="list-menu__item facets__item">
+                            <a
+                              href="{{ category_url }}"
+                              class="
+                                facet-checkbox__text-label-categories facet-checkbox
+                                {% if request.path == category_url %}
+                                  is-active-category
+                                {% endif %}
+                              "
+                            >
+                              {{ block.settings.name }}
+                            </a>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    {% endif %}
+                  </ul>
+                </fieldset>
+              </div>
+            </div>
           </div>
           {% comment %} Pills after filtes on filter type horizontal {% endcomment %}
           {%- if filter_type == 'horizontal' -%}
@@ -1162,122 +1206,156 @@
 </div>
 
 <script>
-  function initCustomFilters() {
-    const form = document.getElementById('FacetFiltersForm');
+  (function () {
+    let activeDiscount = null;
 
-    /* =============================
-     PRICE FILTER (Server-Side)
-  ============================== */
+    function initCustomFilters() {
+      const form = document.querySelector('#FacetFiltersForm');
+      if (!form) return;
 
-    const priceCheckboxes = document.querySelectorAll('.js-price-range');
+      /* ========================
+       PRICE FILTER
+    ========================= */
 
-    function clearPriceHiddenInputs() {
-      form
-        ?.querySelectorAll('input[name="filter.v.price.gte"], input[name="filter.v.price.lte"]')
-        .forEach((el) => el.remove());
-    }
+      const priceCheckboxes = document.querySelectorAll('.js-price-range');
 
-    function applyPriceRange(checkbox) {
-      clearPriceHiddenInputs();
-      if (!checkbox) return;
+      function clearPriceInputs() {
+        form
+          .querySelectorAll('input[name="filter.v.price.gte"], input[name="filter.v.price.lte"]')
+          .forEach((el) => el.remove());
+      }
 
-      const inputMin = document.createElement('input');
-      inputMin.type = 'hidden';
-      inputMin.name = 'filter.v.price.gte';
-      inputMin.value = checkbox.dataset.min;
+      function applyPrice(checkbox) {
+        clearPriceInputs();
 
-      const inputMax = document.createElement('input');
-      inputMax.type = 'hidden';
-      inputMax.name = 'filter.v.price.lte';
-      inputMax.value = checkbox.dataset.max;
+        const minInput = document.createElement('input');
+        minInput.type = 'hidden';
+        minInput.name = 'filter.v.price.gte';
+        minInput.value = checkbox.dataset.min;
 
-      form.appendChild(inputMin);
-      form.appendChild(inputMax);
-    }
+        const maxInput = document.createElement('input');
+        maxInput.type = 'hidden';
+        maxInput.name = 'filter.v.price.lte';
+        maxInput.value = checkbox.dataset.max;
 
-    priceCheckboxes.forEach((cb) => {
-      cb.addEventListener('change', function () {
-        priceCheckboxes.forEach((box) => {
-          box.checked = false;
-          box.closest('label')?.classList.remove('active');
-        });
+        form.appendChild(minInput);
+        form.appendChild(maxInput);
+      }
 
-        this.checked = true;
-        this.closest('label')?.classList.add('active');
-
-        applyPriceRange(this);
-
-        form.dispatchEvent(new Event('input', { bubbles: true }));
-      });
-    });
-
-    // Restore price from URL
-    const params = new URLSearchParams(window.location.search);
-    const gte = params.get('filter.v.price.gte');
-    const lte = params.get('filter.v.price.lte');
-
-    if (gte && lte) {
       priceCheckboxes.forEach((cb) => {
-        if (cb.dataset.min === gte && cb.dataset.max === lte) {
+        cb.onclick = function (e) {
+          e.stopPropagation();
+
+          priceCheckboxes.forEach((box) => {
+            box.checked = false;
+            box.closest('label')?.classList.remove('active');
+          });
+
+          this.checked = true;
+          this.closest('label')?.classList.add('active');
+
+          applyPrice(this);
+
+          form.dispatchEvent(new Event('input', { bubbles: true }));
+        };
+      });
+
+      /* Restore price from URL */
+      const params = new URLSearchParams(window.location.search);
+      const gte = params.get('filter.v.price.gte');
+      const lte = params.get('filter.v.price.lte');
+
+      if (gte && lte) {
+        priceCheckboxes.forEach((cb) => {
+          if (cb.dataset.min === gte && cb.dataset.max === lte) {
+            cb.checked = true;
+            cb.closest('label')?.classList.add('active');
+          }
+        });
+      }
+
+      /* ========================
+       DISCOUNT FILTER
+    ========================= */
+
+      const discountCheckboxes = document.querySelectorAll('[data-discount-filter]');
+
+      function calculateDiscount(product) {
+        const compare = parseFloat(product.dataset.compareAtPrice || 0);
+        const price = parseFloat(product.dataset.price || 0);
+        if (!compare || compare <= price) return 0;
+        return Math.round(((compare - price) / compare) * 100);
+      }
+
+      function inRange(discount, range) {
+        const [min, max] = range.split('-').map(Number);
+        return discount >= min && discount <= max;
+      }
+
+      function applyDiscount() {
+        const productItems = document.querySelectorAll('[data-product-item]');
+
+        if (!activeDiscount) {
+          productItems.forEach((p) => (p.style.display = ''));
+          return;
+        }
+
+        productItems.forEach((product) => {
+          const discount = calculateDiscount(product);
+          product.style.display = inRange(discount, activeDiscount) ? '' : 'none';
+        });
+      }
+
+      discountCheckboxes.forEach((cb) => {
+        cb.onclick = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const alreadyActive = activeDiscount === this.value;
+
+          // Clear all first
+          discountCheckboxes.forEach((box) => {
+            box.checked = false;
+            box.closest('label')?.classList.remove('active');
+          });
+
+          if (alreadyActive) {
+            // User clicked active filter → remove it
+            activeDiscount = null;
+            applyDiscount();
+            return;
+          }
+
+          // Otherwise activate new one
+          this.checked = true;
+          this.closest('label')?.classList.add('active');
+          activeDiscount = this.value;
+
+          applyDiscount();
+        };
+
+        /* Restore after AJAX */
+        if (activeDiscount === cb.value) {
           cb.checked = true;
           cb.closest('label')?.classList.add('active');
         }
       });
+
+      applyDiscount();
     }
 
-    /* =============================
-     DISCOUNT FILTER (Client-Side)
-  ============================== */
+    /* ========== IMPORTANT PART ========== */
+    /* Observe DOM replacement by Dawn */
 
-    const discountCheckboxes = document.querySelectorAll('[data-discount-filter]');
-    const productItems = document.querySelectorAll('[data-product-item]');
-
-    function calculateDiscount(product) {
-      const compare = parseFloat(product.dataset.compareAtPrice || 0);
-      const price = parseFloat(product.dataset.price || 0);
-
-      if (!compare || compare <= price) return 0;
-      return Math.round(((compare - price) / compare) * 100);
-    }
-
-    function inRange(discount, range) {
-      const [min, max] = range.split('-').map(Number);
-      return discount >= min && discount <= max;
-    }
-
-    function applyDiscountFilter() {
-      const active = Array.from(discountCheckboxes).find((cb) => cb.checked);
-
-      if (!active) {
-        productItems.forEach((p) => (p.style.display = ''));
-        return;
-      }
-
-      const selectedRange = active.value;
-
-      productItems.forEach((product) => {
-        const discount = calculateDiscount(product);
-        product.style.display = inRange(discount, selectedRange) ? '' : 'none';
-      });
-    }
-
-    discountCheckboxes.forEach((cb) => {
-      cb.addEventListener('change', function () {
-        discountCheckboxes.forEach((box) => {
-          box.checked = false;
-          box.closest('label')?.classList.remove('active');
-        });
-
-        this.checked = true;
-        this.closest('label')?.classList.add('active');
-
-        applyDiscountFilter();
-      });
+    const observer = new MutationObserver(() => {
+      initCustomFilters();
     });
 
-    applyDiscountFilter();
-  }
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
-  document.addEventListener('DOMContentLoaded', initCustomFilters);
-  document.addEventListener('shopify:section:load', initCustomFilters);
+    document.addEventListener('DOMContentLoaded', initCustomFilters);
+  })();
 </script>

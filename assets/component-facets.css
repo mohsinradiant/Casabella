@@ -344,6 +344,22 @@
   font-weight: 700;
 }
 
+.facet-checkbox__text-label-categories {
+  text-decoration: none;
+  list-style: none;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.facet-checkbox__text-label-categories:hover {
+  color: #5A1E2B;
+  font-weight: 700;
+}
+.is-active-category {
+  color: #5A1E2B;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 .facets-layout-grid>* {
   align-items: flex-start;
 }

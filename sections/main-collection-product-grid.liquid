@@ -112,7 +112,8 @@
             enable_filtering: section.settings.enable_filtering,
             enable_sorting: section.settings.enable_sorting,
             filter_type: section.settings.filter_type,
-            paginate: paginate
+            paginate: paginate,
+            blocks: section.blocks
           %}
         </aside>
       {%- endif -%}
@@ -233,7 +234,7 @@
           "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
         }
       ]
-    },    
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -404,6 +405,24 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_category",
+      "name": "Product Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
     }
   ]
 }

@@ -21,6 +21,82 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "product_category_p9AgwN": {
+          "type": "product_category",
+          "settings": {
+            "name": "New Arrivals",
+            "url": "shopify://collections/new-arrivals"
+          }
+        },
+        "product_category_FrAL4k": {
+          "type": "product_category",
+          "settings": {
+            "name": "Best Sellers",
+            "url": "shopify://collections/frontpage"
+          }
+        },
+        "product_category_7PVELU": {
+          "type": "product_category",
+          "settings": {
+            "name": "Wall Decor",
+            "url": "shopify://collections/frontpage"
+          }
+        },
+        "product_category_3pYr48": {
+          "type": "product_category",
+          "settings": {
+            "name": "Mirrors and Lighting",
+            "url": "shopify://collections/frontpage"
+          }
+        },
+        "product_category_8EgHbg": {
+          "type": "product_category",
+          "settings": {
+            "name": "The Wood Edit",
+            "url": "shopify://collections/frontpage"
+          }
+        },
+        "product_category_4p8qty": {
+          "type": "product_category",
+          "settings": {
+            "name": "Jharokhas",
+            "url": "shopify://collections/frontpage"
+          }
+        },
+        "product_category_nQwn9H": {
+          "type": "product_category",
+          "settings": {
+            "name": "Puja and Sacred Decor",
+            "url": "shopify://collections/frontpage"
+          }
+        },
+        "product_category_ycpJMn": {
+          "type": "product_category",
+          "settings": {
+            "name": "Boho/Minimal",
+            "url": "shopify://collections/frontpage"
+          }
+        },
+        "product_category_Axj9N6": {
+          "type": "product_category",
+          "settings": {
+            "name": "Gifting",
+            "url": "shopify://collections/frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "product_category_p9AgwN",
+        "product_category_FrAL4k",
+        "product_category_7PVELU",
+        "product_category_3pYr48",
+        "product_category_8EgHbg",
+        "product_category_4p8qty",
+        "product_category_nQwn9H",
+        "product_category_ycpJMn",
+        "product_category_Axj9N6"
+      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
