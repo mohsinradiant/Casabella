@@ -491,7 +491,6 @@
                         >
                           <input
                             type="checkbox"
-                            name="discount_range"
                             value="{{ range }}"
                             id="{{ input_id }}"
                             data-discount-filter="{{ range }}"
@@ -1163,136 +1162,122 @@
 </div>
 
 <script>
-  {% comment %}
-    Discount Filter JavaScript Handler
-    Calculates discount percentage dynamically based on compare_at_price vs price
-    and filters products accordingly
-  {% endcomment %}
-  (function() {
-    const discountCheckboxes = document.querySelectorAll('input[data-discount-filter]');
-    const productItems = document.querySelectorAll('[data-product-item]');
-
-    function calculateDiscount(product) {
-      const compareAtPrice = parseFloat(product.dataset.compareAtPrice || 0);
-      const price = parseFloat(product.dataset.price || 0);
-
-      if (!compareAtPrice || compareAtPrice <= price) {
-        return 0;
-      }
-
-      const discount = ((compareAtPrice - price) / compareAtPrice) * 100;
-      return Math.round(discount);
-    }
-
-    function isProductInDiscountRange(discountPercent, rangeString) {
-      const [min, max] = rangeString.split('-').map(Number);
-      return discountPercent >= min && discountPercent <= max;
-    }
-
-    function filterByDiscount() {
-      const checkedRanges = Array.from(discountCheckboxes)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value);
-
-      if (checkedRanges.length === 0) {
-        // Show all products if no discount filter selected
-        productItems.forEach(item => {
-          item.style.display = '';
-        });
-        return;
-      }
-
-      productItems.forEach(product => {
-        const discount = calculateDiscount(product);
-        const matches = checkedRanges.some(range =>
-          isProductInDiscountRange(discount, range)
-        );
-        product.style.display = matches ? '' : 'none';
-      });
-    }
-
-    // Event listeners for discount checkboxes
-    discountCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', filterByDiscount);
-    });
-
-    // Apply filter on page load if any checkboxes are pre-checked
-    if (discountCheckboxes.some(cb => cb.checked)) {
-      filterByDiscount();
-    }
-  })();
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
+  function initCustomFilters() {
     const form = document.getElementById('FacetFiltersForm');
-    const checkboxes = document.querySelectorAll('.js-price-range');
 
-    function clearHiddenInputs() {
+    /* =============================
+     PRICE FILTER (Server-Side)
+  ============================== */
+
+    const priceCheckboxes = document.querySelectorAll('.js-price-range');
+
+    function clearPriceHiddenInputs() {
       form
-        .querySelectorAll('input[name="filter.v.price.gte"], input[name="filter.v.price.lte"]')
+        ?.querySelectorAll('input[name="filter.v.price.gte"], input[name="filter.v.price.lte"]')
         .forEach((el) => el.remove());
     }
 
-    function applySingleRange(checkbox) {
-      clearHiddenInputs();
-
+    function applyPriceRange(checkbox) {
+      clearPriceHiddenInputs();
       if (!checkbox) return;
-
-      const min = checkbox.dataset.min;
-      const max = checkbox.dataset.max;
 
       const inputMin = document.createElement('input');
       inputMin.type = 'hidden';
       inputMin.name = 'filter.v.price.gte';
-      inputMin.value = min;
+      inputMin.value = checkbox.dataset.min;
 
       const inputMax = document.createElement('input');
       inputMax.type = 'hidden';
       inputMax.name = 'filter.v.price.lte';
-      inputMax.value = max;
+      inputMax.value = checkbox.dataset.max;
 
       form.appendChild(inputMin);
       form.appendChild(inputMax);
     }
 
-    checkboxes.forEach((cb) => {
+    priceCheckboxes.forEach((cb) => {
       cb.addEventListener('change', function () {
-        // Uncheck all others
-        checkboxes.forEach((box) => {
+        priceCheckboxes.forEach((box) => {
           box.checked = false;
           box.closest('label')?.classList.remove('active');
         });
 
-        // If user is checking this one
-        if (this.dataset.wasChecked !== 'true') {
-          this.checked = true;
-          this.closest('label')?.classList.add('active');
-          this.dataset.wasChecked = 'true';
-        } else {
-          this.checked = false;
-          this.dataset.wasChecked = 'false';
-        }
+        this.checked = true;
+        this.closest('label')?.classList.add('active');
 
-        const selected = document.querySelector('.js-price-range:checked');
-        applySingleRange(selected);
+        applyPriceRange(this);
 
-        form.submit();
+        form.dispatchEvent(new Event('input', { bubbles: true }));
       });
     });
 
-    // Restore active checkbox from URL on load
-    const urlParams = new URLSearchParams(window.location.search);
-    const gte = urlParams.get('filter.v.price.gte');
-    const lte = urlParams.get('filter.v.price.lte');
+    // Restore price from URL
+    const params = new URLSearchParams(window.location.search);
+    const gte = params.get('filter.v.price.gte');
+    const lte = params.get('filter.v.price.lte');
 
     if (gte && lte) {
-      checkboxes.forEach((cb) => {
+      priceCheckboxes.forEach((cb) => {
         if (cb.dataset.min === gte && cb.dataset.max === lte) {
           cb.checked = true;
           cb.closest('label')?.classList.add('active');
-          cb.dataset.wasChecked = 'true';
         }
       });
     }
-  });
+
+    /* =============================
+     DISCOUNT FILTER (Client-Side)
+  ============================== */
+
+    const discountCheckboxes = document.querySelectorAll('[data-discount-filter]');
+    const productItems = document.querySelectorAll('[data-product-item]');
+
+    function calculateDiscount(product) {
+      const compare = parseFloat(product.dataset.compareAtPrice || 0);
+      const price = parseFloat(product.dataset.price || 0);
+
+      if (!compare || compare <= price) return 0;
+      return Math.round(((compare - price) / compare) * 100);
+    }
+
+    function inRange(discount, range) {
+      const [min, max] = range.split('-').map(Number);
+      return discount >= min && discount <= max;
+    }
+
+    function applyDiscountFilter() {
+      const active = Array.from(discountCheckboxes).find((cb) => cb.checked);
+
+      if (!active) {
+        productItems.forEach((p) => (p.style.display = ''));
+        return;
+      }
+
+      const selectedRange = active.value;
+
+      productItems.forEach((product) => {
+        const discount = calculateDiscount(product);
+        product.style.display = inRange(discount, selectedRange) ? '' : 'none';
+      });
+    }
+
+    discountCheckboxes.forEach((cb) => {
+      cb.addEventListener('change', function () {
+        discountCheckboxes.forEach((box) => {
+          box.checked = false;
+          box.closest('label')?.classList.remove('active');
+        });
+
+        this.checked = true;
+        this.closest('label')?.classList.add('active');
+
+        applyDiscountFilter();
+      });
+    });
+
+    applyDiscountFilter();
+  }
+
+  document.addEventListener('DOMContentLoaded', initCustomFilters);
+  document.addEventListener('shopify:section:load', initCustomFilters);
 </script>
