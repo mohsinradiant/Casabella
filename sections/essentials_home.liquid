@@ -31,11 +31,11 @@
   <div class="essentials-overflow-hidden">
     <img
       class="section_flower_left"
-      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_left.png?v=1769766374"
+      src="{{section.settings.image_left | img_url: 'master' }}"
     >
     <img
       class="section_flower_right"
-      src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/section_flower_right.png?v=1769766386"
+      src="{{section.settings.image_right | img_url: 'master' }}"
     >
     <!-- bottom decoration -->
     <div class="essentials-strip-bg-bottom-image">
@@ -77,6 +77,16 @@
       "type": "url",
       "label": "CTA Link",
       "id": "cta_link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Floating Image Left"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Floating Image Right"
     }
   ],
   "blocks": [
@@ -113,16 +123,6 @@
           "type": "collection",
           "id": "block_url",
           "label": "URL"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_left",
-          "label": "Floating Image Left"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_right",
-          "label": "Floating Image Right"
         }
       ]
     }

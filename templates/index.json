@@ -209,7 +209,9 @@
         "section_subheading": "Chosen repeatedly for modern Indian homes.",
         "collection": "new-arrivals",
         "cta": "VIEW ALL NEW ARRIVALS",
-        "cta_link": "shopify://collections/new-arrivals"
+        "cta_link": "shopify://collections/new-arrivals",
+        "image_left": "shopify://shop_images/dfsf_16.png",
+        "image_right": "shopify://shop_images/dfsf_17.png"
       }
     },
     "shoppable_videos_YUMtxG": {
@@ -306,7 +308,9 @@
         "section_subheading": "Chosen repeatedly for modern Indian homes.",
         "collection": "new-arrivals",
         "cta": "VIEW ALL BEST SELLERS",
-        "cta_link": "shopify://collections/new-arrivals"
+        "cta_link": "shopify://collections/new-arrivals",
+        "image_left": "shopify://shop_images/dfsf_16.png",
+        "image_right": "shopify://shop_images/dfsf_17.png"
       }
     },
     "essentials_home_JLPPQ6": {
@@ -356,7 +360,9 @@
         "section_heading": "Handpicked Essentials",
         "section_subheading": "Timeless designs rooted in tradition, selected for contemporary spaces.",
         "cta": "ALL HANDPICKED PRODUCTS",
-        "cta_link": "shopify://collections/new-arrivals"
+        "cta_link": "shopify://collections/new-arrivals",
+        "image_left": "shopify://shop_images/dfsf_16.png",
+        "image_right": "shopify://shop_images/dfsf_17.png"
       }
     },
     "purpose_home_AtXGEy": {
@@ -416,7 +422,9 @@
       "name": "Purpose Home",
       "settings": {
         "section_heading": "Shop by Purpose",
-        "section_subheading": "Thoughtfully curated pieces to complement how you live, celebrate, and create meaning at home."
+        "section_subheading": "Thoughtfully curated pieces to complement how you live, celebrate, and create meaning at home.",
+        "image_left": "shopify://shop_images/dfsf_16.png",
+        "image_right": "shopify://shop_images/dfsf_17.png"
       }
     }
   },

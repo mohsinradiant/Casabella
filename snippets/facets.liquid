@@ -515,6 +515,7 @@
             {% comment %} End of discount filter {% endcomment %}
 
             <div
+              id="all-categories-filter-{{ section.id }}"
               class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
             >
               <div
@@ -1210,6 +1211,15 @@
     let activeDiscount = null;
 
     function initCustomFilters() {
+      if (window._customFiltersInitialized) return;
+      window._customFiltersInitialized = true;
+      const duplicates = document.querySelectorAll('[id^="all-categories-filter-"]');
+      if (duplicates.length > 1) {
+        duplicates.forEach((el, index) => {
+          if (index !== duplicates.length - 1) el.remove();
+        });
+      }
+
       const form = document.querySelector('#FacetFiltersForm');
       if (!form) return;
 
@@ -1347,14 +1357,8 @@
     /* ========== IMPORTANT PART ========== */
     /* Observe DOM replacement by Dawn */
 
-    const observer = new MutationObserver(() => {
-      initCustomFilters();
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
+    document.addEventListener('DOMContentLoaded', initCustomFilters);
+    document.addEventListener('shopify:section:load', initCustomFilters);
 
     document.addEventListener('DOMContentLoaded', initCustomFilters);
   })();
