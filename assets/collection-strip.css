@@ -225,6 +225,12 @@
     z-index: 1;
 }
 
+#product-grid .card__inner-top_decoration-image {
+    display: none;
+}
+#product-grid .card--standard .card__inner{
+    border-radius: 12px !important;
+}
 .card__heading.h5 {
     font-family: 'Outfit';
     letter-spacing: 0;

@@ -400,16 +400,13 @@
                               >
                                 <input
                                   type="checkbox"
-                                  name="{{ filter.param_name }}"
-                                  value="{{ min_price }}-{{ max_price }}"
                                   id="{{ input_id }}"
+                                  data-min="{{ min_price }}"
+                                  data-max="{{ max_price }}"
+                                  class="js-price-range"
                                   {% if is_active %}
                                     checked
                                   {% endif %}
-                                  {% if is_disabled %}
-                                    disabled
-                                  {% endif %}
-                                  data-price-filter="{{ range }}"
                                 >
 
                                 {{- 'square.svg' | inline_asset_content -}}
@@ -1224,4 +1221,78 @@
       filterByDiscount();
     }
   })();
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('FacetFiltersForm');
+    const checkboxes = document.querySelectorAll('.js-price-range');
+
+    function clearHiddenInputs() {
+      form
+        .querySelectorAll('input[name="filter.v.price.gte"], input[name="filter.v.price.lte"]')
+        .forEach((el) => el.remove());
+    }
+
+    function applySingleRange(checkbox) {
+      clearHiddenInputs();
+
+      if (!checkbox) return;
+
+      const min = checkbox.dataset.min;
+      const max = checkbox.dataset.max;
+
+      const inputMin = document.createElement('input');
+      inputMin.type = 'hidden';
+      inputMin.name = 'filter.v.price.gte';
+      inputMin.value = min;
+
+      const inputMax = document.createElement('input');
+      inputMax.type = 'hidden';
+      inputMax.name = 'filter.v.price.lte';
+      inputMax.value = max;
+
+      form.appendChild(inputMin);
+      form.appendChild(inputMax);
+    }
+
+    checkboxes.forEach((cb) => {
+      cb.addEventListener('change', function () {
+        // Uncheck all others
+        checkboxes.forEach((box) => {
+          box.checked = false;
+          box.closest('label')?.classList.remove('active');
+        });
+
+        // If user is checking this one
+        if (this.dataset.wasChecked !== 'true') {
+          this.checked = true;
+          this.closest('label')?.classList.add('active');
+          this.dataset.wasChecked = 'true';
+        } else {
+          this.checked = false;
+          this.dataset.wasChecked = 'false';
+        }
+
+        const selected = document.querySelector('.js-price-range:checked');
+        applySingleRange(selected);
+
+        form.submit();
+      });
+    });
+
+    // Restore active checkbox from URL on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const gte = urlParams.get('filter.v.price.gte');
+    const lte = urlParams.get('filter.v.price.lte');
+
+    if (gte && lte) {
+      checkboxes.forEach((cb) => {
+        if (cb.dataset.min === gte && cb.dataset.max === lte) {
+          cb.checked = true;
+          cb.closest('label')?.classList.add('active');
+          cb.dataset.wasChecked = 'true';
+        }
+      });
+    }
+  });
 </script>
