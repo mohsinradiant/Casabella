@@ -48,3 +48,25 @@
     opacity: .8;
     font-weight: 400;
 }
+
+@media(max-width:756px) {
+    .brand-values-item {
+        width: calc(50% - 5px);
+        flex-direction: column;
+    }
+
+    .brand-values-container .page-width {
+        flex-wrap: wrap;
+        row-gap: 25px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .brand-values-item-text-container p:nth-of-type(1) {
+        text-align: center;
+    }
+
+    .brand-values-item-text-container p:nth-of-type(2) {
+        text-align: center;
+    }
+}

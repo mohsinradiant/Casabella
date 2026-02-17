@@ -4,6 +4,7 @@
     position: relative;
     z-index: 3;
     min-height: 830px;
+    overflow: hidden;
 }
 
 .essentials-strip-bg-top-image {
@@ -153,4 +154,39 @@
     overflow: hidden;
     z-index: 0;
     pointer-events: none;
+}
+
+@media(max-width:756px) {
+    .essentials-strip-container .section-heading {
+        font-size: 2.3rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .essentials-strip-container .section-subheading {
+        font-size: 13px;
+        line-height: 1.2;
+        margin-top: 6px;
+    }
+
+    .essentials-strip-relative {
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    .essentials-strip-item {
+        width: 100%;
+    }
+
+    .essentials-strip-item p:nth-of-type(1) {
+        font-size: 2.3rem;
+        margin: 120px 0 0;
+    }
+
+    .essentials-strip-item p:nth-of-type(2) {
+        font-size: 3rem;
+    }
+
+    .essentials-strip-item p:nth-of-type(3) {
+        font-size: 1.3rem;
+    }
 }

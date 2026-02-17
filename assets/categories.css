@@ -228,13 +228,23 @@
 ================================ */
 
 @media (max-width: 768px) {
+    .categories-scroller-title {
+        color: #5A1E2B;
+        font-size: 2.3rem;
+        text-align: center;
+        margin-bottom: 15px;
+        margin-top: 32px;
+    }
+
     .categories-scroller-wrapper {
-        gap: 40px;
+        gap: 20px;
         padding: 10px 20px;
+
     }
 
     .category-item {
-        min-width: 110px;
+        min-width: unset;
+        width: 100px;
     }
 
     .category-item img {
@@ -242,7 +252,17 @@
         height: 100px;
     }
 
-    .scroller-arrow {
-        display: none;
+    .category-name {
+        text-wrap: wrap;
+        line-height: 1.3;
+        margin-bottom: 0;
+    }
+
+    .categories-dots {
+        margin: 15px auto 0;
+    }
+
+    .categories-scroller-cta {
+        margin: 22px auto 0;
     }
 }

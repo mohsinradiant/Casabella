@@ -91,6 +91,9 @@
 /* ================================
    DOTS (CENTERED ACTIVE)
 ================================ */
+.collection-dots {
+    z-index: 3;
+}
 
 .collection-strip .collection-dots {
     margin: 18px auto 0;
@@ -229,9 +232,11 @@
 #product-grid .card__inner-top_decoration-image {
     display: none;
 }
-#product-grid .card--standard .card__inner{
+
+#product-grid .card--standard .card__inner {
     border-radius: 12px !important;
 }
+
 .card__heading.h5 {
     font-family: 'Outfit';
     letter-spacing: 0;
@@ -245,15 +250,44 @@
 ================================ */
 
 @media (max-width: 768px) {
+    .collection-strip {
+        padding: 45px 0 120px;
+    }
+
+    .section_flower_left,
+    .section_flower_right {
+        display: none;
+    }
+
     .collection-strip-wrapper {
-        padding: 10px 20px;
+        padding: 10px 0;
     }
 
     .collection-strip-item {
-        width: 240px;
+        width: 50%;
     }
 
-    .collection-strip .scroller-arrow {
-        display: none;
+    .collection-strip .scroller-arrow.left,
+    .scroller-arrow.left {
+        left: 2px !important;
+    }
+
+    .collection-strip .scroller-arrow.right,
+    .scroller-arrow.right {
+        right: 2px !important;
+    }
+
+    .collection-strip .section-heading,
+    .shoppable_videos-container .section-heading {
+        font-size: 2.3rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .collection-strip .section-subheading {
+        font-size: 13px;
+    }
+
+    .collection-strip .collection-strip-cta {
+        margin: 30px auto 0;
     }
 }
