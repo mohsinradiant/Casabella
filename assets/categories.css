@@ -238,13 +238,13 @@
 
     .categories-scroller-wrapper {
         gap: 20px;
-        padding: 10px 20px;
+        padding: 10px 0;
 
     }
 
     .category-item {
         min-width: unset;
-        width: 100px;
+        width: 29.8%;
     }
 
     .category-item img {

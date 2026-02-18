@@ -12,14 +12,14 @@
 }
 
 @media screen and (max-width: 749px) {
-  .footer .grid {
-    display: block;
-  }
-
   .footer-block.grid__item {
     padding: 0;
-    margin: 4rem 0;
+    margin: 4rem 0 1rem;
     width: 100%;
+  }
+
+  .footer {
+    padding-top: 40px !important;
   }
 
   .footer-block.grid__item:first-child {
@@ -30,6 +30,9 @@
     padding-bottom: 3rem;
     padding-left: calc(4rem / var(--font-body-scale));
     padding-right: calc(4rem / var(--font-body-scale));
+    min-width: 100% !important;
+    margin: 0 !important;
+
   }
 }
 
@@ -140,7 +143,7 @@
 }
 
 .footer__blocks-wrapper .footer-block:first-of-type {
-  width: 23%;
+  width: 100%;
   max-width: unset;
   min-width: unset;
   flex: unset;
@@ -150,6 +153,14 @@
 @media screen and (max-width: 749px) {
   .footer-block.footer-block--menu:only-child {
     text-align: left;
+  }
+
+  .footer-block--menu {
+    width: 32.5% !important;
+  }
+
+  .footer__blocks-wrapper .footer-block:first-of-type {
+    margin: 0;
   }
 }
 
@@ -259,24 +270,27 @@
 }
 
 .footer-bottom-policies-container-inner-3 button {
-    background-color: #583f46;
-    color: #fff;
-    border: none;
-    display: flex;
-    gap: 5px;
-    padding: 10px 17px 10px 17px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 500px;
-    font-size: 10px;
-    font-weight: 400;
-    font-family: 'Outfit';
+  background-color: #583f46;
+  color: #fff;
+  border: none;
+  display: flex;
+  gap: 5px;
+  padding: 10px 17px 10px 17px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 500px;
+  text-wrap: nowrap;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Outfit';
 }
-.footer-bottom-policies-container-inner-3 button img{
+
+.footer-bottom-policies-container-inner-3 button img {
   width: 10px;
   height: auto;
 }
+
 .footer-block__subheading-newsletter {
   font-weight: 300;
   font-size: 11.5px;
@@ -341,6 +355,10 @@
     gap: 3rem;
   }
 
+  .footer-bottom-policies-container-inner-1 {
+    flex-wrap: wrap;
+  }
+
   .footer__list-social.list-social,
   .footer__follow-on-shop,
   .footer-block__newsletter {
@@ -350,6 +368,8 @@
 
   .footer-block__newsletter {
     flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 }
 
