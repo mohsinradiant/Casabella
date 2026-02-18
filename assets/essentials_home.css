@@ -8,7 +8,7 @@
 
 .essentials-strip-bg-top-image {
     position: absolute;
-    top: -16px;
+    top: -13px;
     left: 0;
     width: 100%;
     height: auto;
@@ -93,7 +93,7 @@
     letter-spacing: 0;
     line-height: 1;
     font-family: 'Ethnic';
-    margin: 97px 0 0;
+    margin: 34% 0 0;
 }
 
 .essentials-strip-item p:nth-of-type(2) {
@@ -175,6 +175,10 @@
     .essentials-strip-item {
         width: 100%;
         padding: 0 40px;
+    }
+
+    .essentials-strip-bg-top-image {
+        top: -4px;
     }
 
     .essentials-strip-item p:nth-of-type(1) {

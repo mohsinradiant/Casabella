@@ -155,7 +155,7 @@
   }
 
   .footer-block--menu {
-    width: 32.5% !important;
+    width: 31% !important;
   }
 
   .footer__blocks-wrapper .footer-block:first-of-type {
@@ -262,6 +262,7 @@
   width: 100%;
   padding-top: 2.5rem !important;
   padding: 0;
+  gap: 20px;
 }
 
 .footer-bottom-policies-container-inner-3 p {
@@ -346,6 +347,18 @@
 
 @media screen and (max-width: 749px) {
 
+  .footer-policy-text {
+    font-size: 10px;
+  }
+
+  .footer-block__heading {
+    font-size: 14px;
+  }
+
+  .footer__blocks-wrapper.grid {
+    justify-content: space-between;
+  }
+
   /*
     On a small screen we want all the items to be centered
     because they will be stacked.
@@ -360,6 +373,7 @@
 
   .footer-bottom-policies-container-inner-1 {
     flex-wrap: wrap;
+    row-gap: 10px;
   }
 
   .footer__list-social.list-social,
@@ -372,7 +386,10 @@
   .footer-block__newsletter {
     flex-direction: column;
     width: 100%;
-    align-items: center;
+  }
+
+  .footer-block__subheading-newsletter {
+    text-align: left;
   }
 }
 

@@ -241,8 +241,13 @@
     font-family: 'Outfit';
     letter-spacing: 0;
     font-weight: 500;
+    color: #282122 !important;
     font-size: 13px;
     margin-bottom: 7px;
+}
+
+.card__heading.h5 a{
+    color: #282122 !important;
 }
 
 /* ================================

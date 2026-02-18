@@ -29,14 +29,18 @@
     </a>
   </div>
   <div class="essentials-overflow-hidden">
-    <img
-      class="section_flower_left"
-      src="{{section.settings.image_left | img_url: 'master' }}"
-    >
-    <img
-      class="section_flower_right"
-      src="{{section.settings.image_right | img_url: 'master' }}"
-    >
+    {% if section.settings.image_left %}
+      <img
+        class="section_flower_left"
+        src="{{section.settings.image_left | img_url: 'master' }}"
+      >
+    {% endif %}
+    {% if section.settings.image_right %}
+      <img
+        class="section_flower_right"
+        src="{{section.settings.image_right | img_url: 'master' }}"
+      >
+    {% endif %}
     <!-- bottom decoration -->
     <div class="essentials-strip-bg-bottom-image">
       <img

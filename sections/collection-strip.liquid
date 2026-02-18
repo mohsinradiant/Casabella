@@ -36,14 +36,18 @@
       {{ section.settings.cta }}
     </a>
   </div>
+  {% if section.settings.image_left %}
   <img
     class="section_flower_left"
     src="{{section.settings.image_left | img_url: 'master' }}"
   >
+  {% endif %}
+  {% if section.settings.image_right %}
   <img
     class="section_flower_right"
     src="{{section.settings.image_right | img_url: 'master' }}"
   >
+  {% endif %}
   <!-- bottom decoration -->
   <div class="collection-strip-bottom">
     <img

@@ -7,7 +7,6 @@
     padding-top: 52px;
     padding-bottom: 100px;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .shoppable_videos-container .card__content {
@@ -75,7 +74,15 @@
 
 .shoppable_videos-container .page-width {
     position: relative;
-    padding: 0;
+    width: 100%;
+}
+
+.shoppable_videos-container .scroller-arrow.left {
+    left: 30px
+}
+
+.shoppable_videos-container .scroller-arrow.right {
+    right: 30px
 }
 
 .shoppable_videos-wrapper {
@@ -180,7 +187,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    flex: 0 0 23.5%;
+    flex: 0 0 24.5%;
     min-width: 220px;
     scroll-snap-align: start;
 }
@@ -226,4 +233,9 @@
         flex: 0 0 16.5%;
         min-width: 183px;
     }
+
+    .shoppable_videos-container-top-image_strip {
+        top: -2px;
+    }
+
 }
