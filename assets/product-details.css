@@ -120,3 +120,10 @@
     font-size: 36px;
     text-align: center;
 }
+
+@media(max-width: 756px) {
+    .jm-review-widget--sidebar-header {
+        padding-top: 35px !important;
+        padding-bottom: 35px !important;
+    }
+}
