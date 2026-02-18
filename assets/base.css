@@ -1204,6 +1204,21 @@ deferred-media {
   color: #fff !important;
   box-shadow: none !important;
   align-items: center;
+  transition: all ease-in .2s !important;
+}
+
+.button--secondary:hover {
+  background-color: #fff !important;
+  color: #5A1E2B !important;
+  border: solid 2px #5A1E2B !important;
+}
+
+.button--secondary img {
+  transition: all ease-in .2s !important;
+}
+
+.button--secondary:hover img {
+  filter: invert();
 }
 
 .button--secondary span {
@@ -1276,7 +1291,26 @@ button.shopify-payment-button__button--unbranded {
 .custom-buy-now {
   width: 50%;
   height: calc(4.5rem + var(--buttons-border-width) * 2);
+  transition: all ease-in .2s !important;
+  cursor: pointer;
 }
+
+
+.custom-buy-now:hover {
+  background-color: #5A1E2B !important;
+  color: #fff !important;
+  border: solid 2px #fff !important;
+}
+
+.custom-buy-now img {
+  transition: all ease-in .2s !important;
+}
+
+.custom-buy-now:hover img {
+  filter: invert() brightness(1.5);
+}
+
+
 
 .product__info-wrapper .shopify-payment-button {
   width: 50%;

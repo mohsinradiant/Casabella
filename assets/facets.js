@@ -156,6 +156,9 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderActiveFacets(parsedHTML);
     FacetFiltersForm.renderAdditionalElements(parsedHTML);
 
+    // after everything has been injected, fire an event so custom scripts can re‑initialize
+    document.dispatchEvent(new Event('facets:updated'));
+
     if (countsToRender) {
       const closestJSFilterID = event.target.closest('.js-filter').id;
 

@@ -219,7 +219,7 @@
 .footer-bottom-policies-container-inner-1 {
   display: flex;
   text-transform: uppercase;
-  gap: 21px;
+  gap: 30px;
   letter-spacing: 0;
   border-top: solid 1px #ffffff30;
   padding-top: 22px;
@@ -374,6 +374,7 @@
   .footer-bottom-policies-container-inner-1 {
     flex-wrap: wrap;
     row-gap: 10px;
+    column-gap: 20px;
   }
 
   .footer__list-social.list-social,

@@ -1211,8 +1211,7 @@
     let activeDiscount = null;
 
     function initCustomFilters() {
-      if (window._customFiltersInitialized) return;
-      window._customFiltersInitialized = true;
+      // Remove duplicate category filters that may appear after AJAX updates
       const duplicates = document.querySelectorAll('[id^="all-categories-filter-"]');
       if (duplicates.length > 1) {
         duplicates.forEach((el, index) => {
@@ -1220,23 +1219,15 @@
         });
       }
 
-      const form = document.querySelector('#FacetFiltersForm');
-      if (!form) return;
-
-      /* ========================
-       PRICE FILTER
-    ========================= */
-
-      const priceCheckboxes = document.querySelectorAll('.js-price-range');
-
-      function clearPriceInputs() {
+      /* global price filter helpers usable by any form or markup */
+      function clearPriceInputs(form) {
         form
           .querySelectorAll('input[name="filter.v.price.gte"], input[name="filter.v.price.lte"]')
           .forEach((el) => el.remove());
       }
 
-      function applyPrice(checkbox) {
-        clearPriceInputs();
+      function applyPrice(form, checkbox) {
+        clearPriceInputs(form);
 
         const minInput = document.createElement('input');
         minInput.type = 'hidden';
@@ -1252,37 +1243,55 @@
         form.appendChild(maxInput);
       }
 
-      priceCheckboxes.forEach((cb) => {
-        cb.onclick = function (e) {
+      // attach delegation to every form that contains price checkboxes
+      document.querySelectorAll('form').forEach((form) => {
+        if (!form.querySelector('.js-price-range')) return;
+        if (form._priceHandlerAttached) return;
+
+        form.addEventListener('click', (e) => {
+          const cb = e.target.closest('.js-price-range');
+          if (!cb) return;
+
+          e.preventDefault();
           e.stopPropagation();
 
-          priceCheckboxes.forEach((box) => {
+          const alreadyActive = cb.checked && cb.closest('label')?.classList.contains('active');
+
+          form.querySelectorAll('.js-price-range').forEach((box) => {
             box.checked = false;
             box.closest('label')?.classList.remove('active');
           });
+          clearPriceInputs(form);
 
-          this.checked = true;
-          this.closest('label')?.classList.add('active');
+          if (alreadyActive) {
+            form.dispatchEvent(new Event('input', { bubbles: true }));
+            return;
+          }
 
-          applyPrice(this);
-
+          cb.checked = true;
+          cb.closest('label')?.classList.add('active');
+          applyPrice(form, cb);
           form.dispatchEvent(new Event('input', { bubbles: true }));
-        };
+        });
+        form._priceHandlerAttached = true;
       });
 
-      /* Restore price from URL */
+      /* restore visual state whenever the filters exist */
       const params = new URLSearchParams(window.location.search);
       const gte = params.get('filter.v.price.gte');
       const lte = params.get('filter.v.price.lte');
-
       if (gte && lte) {
-        priceCheckboxes.forEach((cb) => {
+        document.querySelectorAll('.js-price-range').forEach((cb) => {
           if (cb.dataset.min === gte && cb.dataset.max === lte) {
             cb.checked = true;
             cb.closest('label')?.classList.add('active');
+            const form = cb.closest('form');
+            if (form) applyPrice(form, cb);
           }
         });
       }
+
+      /* note: shopify:section events cover AJAX replacement so no mutation observer needed */
 
       /* ========================
        DISCOUNT FILTER
@@ -1357,9 +1366,12 @@
     /* ========== IMPORTANT PART ========== */
     /* Observe DOM replacement by Dawn */
 
+    // Initialize on initial load and whenever a section reloads (AJAX updates)
     document.addEventListener('DOMContentLoaded', initCustomFilters);
     document.addEventListener('shopify:section:load', initCustomFilters);
+    document.addEventListener('shopify:section:render', initCustomFilters);
 
-    document.addEventListener('DOMContentLoaded', initCustomFilters);
+    // faceted AJAX updates from our custom script
+    document.addEventListener('facets:updated', initCustomFilters);
   })();
 </script>
