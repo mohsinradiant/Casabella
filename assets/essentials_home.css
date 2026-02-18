@@ -4,12 +4,11 @@
     position: relative;
     z-index: 3;
     min-height: 830px;
-    overflow: hidden;
 }
 
 .essentials-strip-bg-top-image {
     position: absolute;
-    top: -13px;
+    top: -16px;
     left: 0;
     width: 100%;
     height: auto;

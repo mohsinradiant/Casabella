@@ -82,7 +82,7 @@
 
 .categories-scroller-cta {
     display: block;
-    margin: 30px auto 0;
+    margin: 25px auto 0;
     text-align: center;
     text-decoration: underline;
     color: #C36075;
@@ -131,10 +131,14 @@
 ================================ */
 
 .categories-dots {
-    margin: 30px auto 0;
+    margin: 10px auto 0;
     width: 90px;
     display: flex;
     justify-content: center;
+}
+
+.categories-dots.shoppable_videos-dots {
+    margin: 30px auto 0;
 }
 
 .categories-dots-track {

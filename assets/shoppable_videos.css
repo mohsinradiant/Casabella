@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 72px;
-    padding-bottom: 120px;
+    padding-top: 52px;
+    padding-bottom: 100px;
     flex-direction: column;
     overflow: hidden;
 }
@@ -157,7 +157,7 @@
 .shoppable-videos-cta {
     display: block;
     text-align: center;
-    margin: 30px auto 20px;
+    margin: 25px auto 20px;
     font-size: 12px;
     text-decoration: underline;
     color: #C36075;
