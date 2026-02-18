@@ -24,7 +24,7 @@ slideshow-component .slideshow.banner {
 
 @media screen and (max-width: 749px) {
   slideshow-component .slideshow.banner {
-    aspect-ratio: 600 / 730 !important;
+    aspect-ratio: 625 / 947 !important;
   }
 
   .banner__media {
