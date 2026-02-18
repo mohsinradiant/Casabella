@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Mask_group_1.jpg",
-            "mobile_image": "shopify://shop_images/Mask_group_1.jpg",
+            "mobile_image": "shopify://shop_images/mobile-banner.jpg",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_size": "h1",
