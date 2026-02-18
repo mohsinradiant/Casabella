@@ -122,6 +122,28 @@
   .collection-hero__image-container {
     height: 20rem;
   }
+
+  .collection-hero {
+    aspect-ratio: 1348 / 640;
+  }
+
+  .collection-hero__text-wrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .collection-hero__title {
+    font-size: 2.3rem;
+  }
+
+  .collection-hero__title+.collection-hero__description {
+    font-size: 13px !important;
+    font-weight: 200 !important;
+    line-height: 1.2 !important;
+    margin-top: 6px !important;
+  }
 }
 
 @media screen and (min-width: 750px) {
