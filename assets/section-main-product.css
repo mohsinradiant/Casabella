@@ -493,7 +493,9 @@ a.product__text {
     margin-bottom: 3rem;
     width: calc(100% + 4rem);
   }
-
+.product__title {
+  margin-top: 10px;
+}
   .product__media-wrapper slider-component:not(.thumbnail-slider--no-slide) {
     margin-left: -1.5rem;
     margin-right: -1.5rem;

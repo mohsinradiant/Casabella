@@ -369,7 +369,11 @@
   }
 
   .footer-block__heading {
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  .list-menu__item {
+    font-size: 1.2rem;
   }
 
   .footer__blocks-wrapper.grid {
@@ -408,6 +412,11 @@
 
   .footer-block__subheading-newsletter {
     text-align: left;
+    font-size: 1.2rem;
+  }
+
+  .footer-bottom-policies-container-inner-2 p {
+    font-size: 1.2rem;
   }
 }
 
@@ -566,9 +575,12 @@
 }
 
 @media screen and (max-width: 749px) {
-.footer-block__brand-info .rte>*:last-child, .footer_social_icons-heading{
-  font-size: 12px !important;
-}
+
+  .footer-block__brand-info .rte>*:last-child,
+  .footer_social_icons-heading {
+    font-size: 12px !important;
+  }
+
   .footer-block-image,
   .footer-block-image.left,
   .footer-block-image.center,
