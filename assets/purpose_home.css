@@ -156,19 +156,26 @@
     }
 
     .purpose-strip-item-text-container p:nth-of-type(1) {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .purpose-strip-item-text-container p:nth-of-type(2) {
-        font-size: 2.3rem;
+        font-size: 2rem;
     }
 
     .purpose-strip-item-text-container p:nth-of-type(3) {
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1.1;
     }
 
     .purpose-strip-item-text-container a {
-        margin-top: 12px;
+        margin-top: 8px;
+        font-size: .8rem;
+        letter-spacing: 0;
+    }
+
+    .purpose-strip-item-text-container {
+        left: 18px;
+        width: 42%;
     }
 }

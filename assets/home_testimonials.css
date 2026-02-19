@@ -1,0 +1,193 @@
+.testimonials-home-container {
+    position: relative;
+    background-color: #F3EADE;
+    padding-top: 65px;
+    padding-bottom: 80px;
+}
+
+.testimonials-home-container .section-heading {
+    text-align: center;
+    color: #5A1E2B;
+    font-size: 42px;
+    margin: 0;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.testimonials-home-container-top-image_strip {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: -15px;
+    z-index: 4;
+}
+
+.testimonials-home-container .section-subheading {
+    text-align: center;
+    font-size: 16px;
+    margin: 10px auto 0;
+    color: #5A1E2B;
+    margin-bottom: 43px;
+    opacity: .7;
+    max-width: 490px;
+    line-height: 1.2;
+    font-weight: 200;
+}
+
+.testimonials-wrapper {
+    display: flex;
+    gap: 32px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.testimonial-item {
+    flex: 0 0 auto;
+    /* same formula as the strip so three cards fill the width */
+    width: calc((100% - 64px) / 3);
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 30px 30px 50px;
+    position: relative;
+    border-radius: 18px;
+    border: solid 1px #5a1e2b40;
+}
+
+.testimonial-card .avatar {
+    width: 55px;
+    height: 55px;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.testimonial-card .name {
+    margin: 0;
+    font-weight: 500;
+    font-family: 'Outfit';
+    letter-spacing: 0;
+    font-size: 15px;
+    color: #504a4b;
+}
+
+.testimonial-card .rating {
+    display: flex;
+}
+
+.testimonial-rating_name-container-parent {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.testimonial-card .rating .star {
+    color: #f0c722;
+    width: 12px;
+    margin: 5px 1px 0;
+}
+
+.testimonial-card .rating .star.inactive {
+    color: #ddd;
+}
+
+.testimonial-card .quote {
+    margin-top: 19px;
+    font-family: 'Ethnic';
+    font-size: 22px;
+    line-height: 1.5;
+    color: #230c12;
+}
+
+.testimonials-relative {
+    position: relative;
+}
+
+.testimonials-relative .scroller-arrow.left,
+.testimonials-relative .scroller-arrow.right {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+/* ------------------------------------------------------------------- */
+/* the dot track – copied verbatim from the collection‑strip stylesheet */
+/* ------------------------------------------------------------------- */
+.testimonials-dots {
+    margin-top: 24px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonials-dots-track {
+    display: inline-flex;
+    width: 100%;
+    gap: 8px;
+    transition: transform .3s;
+}
+
+.testimonials-dots-track button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c49b9b;
+    /* same neutral colour used in the strip */
+    border: none;
+    padding: 0;
+}
+
+.testimonials-dots-track button.active {
+    background: #814d5d;
+}
+
+.testimonials-dots-track button.prev,
+.testimonials-dots-track button.next {
+    /* optional hover/adjacent states if strip has them */
+    opacity: .6;
+}
+
+@media(max-width:756px) {
+    .testimonials-home-container .section-heading {
+        font-size: 2.3rem;
+    }
+
+    .testimonials-home-container .section-subheading {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .testimonials-home-container {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .testimonial-item {
+        width: 75%;
+    }
+
+    .testimonial-card .name {
+        font-size: 10px;
+    }
+
+    .testimonial-card .avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .testimonial-rating_name-container-parent {
+        gap: 10px;
+    }
+
+    .testimonial-card .quote {
+        font-size: 13px;
+        line-height: 1.1;
+    }
+
+    .testimonials-wrapper {
+        gap: 14px;
+    }
+}

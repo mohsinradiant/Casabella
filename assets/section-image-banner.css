@@ -505,9 +505,12 @@
   }
 
   .banner__buttons {
-    top: 39%;
+    top: 39.5%;
     left: 25%;
     width: 50%;
+  }
+  .scroller-arrow{
+    display: none;
   }
 }
 

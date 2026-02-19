@@ -255,6 +255,10 @@
 ================================ */
 
 @media (max-width: 768px) {
+    .card__heading.h5 a {
+        font-size: 12px;
+    }
+
     .collection-strip {
         padding: 45px 0 120px;
     }

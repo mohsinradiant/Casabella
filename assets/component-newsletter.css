@@ -20,7 +20,26 @@
 }
 
 .newsletter-form__field-wrapper .field__input {
-  padding-right: 5rem;
+  height: 53px;
+  padding: 0 20px !important;
+  line-height: 53px;
+}
+
+.newsletter-form__button {
+  font-size: 11px !important;
+  height: 53px;
+  font-weight: 700 !important;
+  font-family: 'Outfit';
+}
+
+.newsletter-form__field-wrapper .field__label {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.newsletter-form__field-wrapper .field__input:not(:placeholder-shown)~.field__label,
+.newsletter-form__field-wrapper .field__input:focus~.field__label {
+  top: 24%;
 }
 
 .newsletter-form__field-wrapper .field {

@@ -421,8 +421,75 @@
     },
     "testiimonials_home_WimR6b": {
       "type": "testiimonials_home",
+      "blocks": {
+        "testimonial_HrE3ry": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/4945750.png",
+            "name": "Siddharth Aggarwal",
+            "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
+            "rating": 5
+          }
+        },
+        "testimonial_6VFci9": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/4945750.png",
+            "name": "Siddharth Aggarwal",
+            "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
+            "rating": 5
+          }
+        },
+        "testimonial_RWFqzx": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/4945750.png",
+            "name": "Siddharth Aggarwal",
+            "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
+            "rating": 5
+          }
+        },
+        "testimonial_MxfGwb": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/4945750.png",
+            "name": "Siddharth Aggarwal",
+            "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
+            "rating": 5
+          }
+        },
+        "testimonial_wrVwKU": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/4945750.png",
+            "name": "Siddharth Aggarwal",
+            "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
+            "rating": 5
+          }
+        },
+        "testimonial_khn3bB": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/4945750.png",
+            "name": "Siddharth Aggarwal",
+            "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_HrE3ry",
+        "testimonial_6VFci9",
+        "testimonial_RWFqzx",
+        "testimonial_MxfGwb",
+        "testimonial_wrVwKU",
+        "testimonial_khn3bB"
+      ],
       "name": "Testimonials Home",
-      "settings": {}
+      "settings": {
+        "heading": "Customer Reviews",
+        "subheading": "Real moments. Real Celebrations. Real words from those who lived the experience."
+      }
     }
   },
   "order": [

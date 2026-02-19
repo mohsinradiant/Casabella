@@ -146,7 +146,8 @@
   max-width: unset;
   min-width: unset;
   flex: unset;
-  margin-right: 60px;
+  margin-right: 9%;
+  width: 21%;
 }
 
 @media screen and (max-width: 749px) {
@@ -181,10 +182,24 @@
   width: fit-content;
 }
 
+.footer-block__newsletter .footer-block__heading {
+  font-size: 22px !important;
+}
+
 @media screen and (min-width: 990px) {
   .footer-block__heading {
-    font-size: 15px;
+    font-size: 17px;
   }
+}
+
+.footer__list-social .list-social__item .svg-wrapper {
+  width: 27px;
+  height: 27px;
+}
+
+.footer__list-social .list-social__item .svg-wrapper svg {
+  width: 100%;
+  height: 100%;
 }
 
 .footer__list-social:empty,
@@ -241,10 +256,10 @@
 }
 
 .footer-bottom-policies-container-inner-2 p {
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 300;
   letter-spacing: 0;
-  line-height: 1.45;
+  line-height: 1.7;
   margin: 0;
 }
 
@@ -252,7 +267,8 @@
   margin: 0;
   color: #fff;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .footer-bottom-policies-container-inner-3 {
@@ -296,11 +312,12 @@
 }
 
 .footer-block__subheading-newsletter {
-  font-weight: 300;
-  font-size: 11.5px;
+  font-weight: 400;
+  font-size: 14px;
   color: #fff;
   line-height: 1.2;
   opacity: .7;
+  margin-bottom: 40px;
 }
 
 .newsletter-form__field-wrapper {
@@ -524,7 +541,7 @@
 @media screen and (min-width: 750px) {
   .footer-block__details-content .list-menu__item--link {
     display: inline-block;
-    font-size: 11.5px;
+    font-size: 13px !important;
   }
 
   .footer-block__details-content> :first-child .list-menu__item--link {
@@ -549,7 +566,9 @@
 }
 
 @media screen and (max-width: 749px) {
-
+.footer-block__brand-info .rte>*:last-child, .footer_social_icons-heading{
+  font-size: 12px !important;
+}
   .footer-block-image,
   .footer-block-image.left,
   .footer-block-image.center,
@@ -575,9 +594,9 @@
 
 .footer-block__brand-info .rte>*:last-child {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .footer-block:only-child .footer-block__brand-info {
@@ -606,7 +625,7 @@
   margin-top: 22px;
   margin-bottom: 0;
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .footer-block__brand-info .footer__list-social.list-social .list-social__item:first-of-type a {

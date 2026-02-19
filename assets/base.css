@@ -2475,6 +2475,20 @@ input[type='checkbox'] {
   .header__heading-logo {
     max-width: 120px;
   }
+
+  .header {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .header__icon .svg-wrapper {
+    width: 27px !important;
+    height: 27px !important;
+  }
+
+  .header__heading {
+    width: 165px;
+  }
 }
 
 @media screen and (min-width: 990px) {

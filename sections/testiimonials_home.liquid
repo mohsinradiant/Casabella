@@ -1,9 +1,191 @@
 <link rel="stylesheet" href="{{ 'home_testimonials.css' | asset_url }}">
-<div class=""></div>
+
+<div class="testimonials-home-container testimonials-home">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_454_2.png?v=1770898580"
+    class="testimonials-home-container-top-image_strip"
+  >
+  <div class="page-width">
+    <h2 class="section-heading">{{ section.settings.heading }}</h2>
+    <p class="section-subheading">{{ section.settings.subheading }}</p>
+
+    <div class="testimonials-relative">
+      <div class="testimonials-wrapper" id="testimonialsScroller">
+        {% for block in section.blocks %}
+          <div class="testimonial-item">
+            <div class="testimonial-card">
+              <div class="testimonial-rating_name-container-parent">
+                {% if block.settings.avatar %}
+                  <img class="avatar" src="{{ block.settings.avatar | img_url: '100x100' }}" alt="">
+                {% endif %}
+                <div class="testimonial-rating_name-container">
+                  <h3 class="name">{{ block.settings.name }}</h3>
+                  <div class="rating">
+                    {% for i in (1..5) %}
+                      {% if i <= block.settings.rating %}
+                        <img
+                          class="star"
+                          src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Screenshot_2026-02-20_022309.png?v=1771534402"
+                        >
+                      {% else %}
+                        <img
+                          class="star inactive"
+                          src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Screenshot_2026-02-20_022309.png?v=1771534402"
+                        >
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              <p class="quote">{{ block.settings.quote }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- arrows -->
+      <button class="scroller-arrow left" aria-label="Previous">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_433.png?v=1770214279"
+        >
+      </button>
+      <button class="scroller-arrow right" aria-label="Next">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/Group_433.png?v=1770214279"
+          style="transform: rotate(180deg);"
+        >
+      </button>
+    </div>
+
+    <!-- dots -->
+    <div class="testimonials-dots">
+      <div class="testimonials-dots-track" id="testimonialsDots"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.testimonials-home').forEach((section) => {
+      const scroller = section.querySelector('#testimonialsScroller');
+      const dotsTrack = section.querySelector('#testimonialsDots');
+      const prevBtn = section.querySelector('.scroller-arrow.left');
+      const nextBtn = section.querySelector('.scroller-arrow.right');
+
+      const items = [...scroller.children];
+      if (!items.length) return;
+
+      const itemsPerSlide = 3;
+      const itemGap = 32;
+      const itemWidth = items[0].offsetWidth;
+      const slideWidth = (itemWidth + itemGap) * itemsPerSlide;
+
+      const totalSlides = Math.ceil(items.length / itemsPerSlide);
+      let currentSlide = 0;
+
+      /* create dots */
+      dotsTrack.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => {
+          goToSlide(i);
+          resetAutoplay();
+        };
+        dotsTrack.appendChild(dot);
+      }
+
+      const dots = [...dotsTrack.children];
+
+      function goToSlide(index) {
+        currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+        scroller.scrollTo({ left: slideWidth * currentSlide, behavior: 'smooth' });
+        updateDots();
+      }
+
+      function updateDots() {
+        dots.forEach((dot, i) => {
+          dot.classList.remove('active', 'prev', 'next');
+          if (i === currentSlide) dot.classList.add('active');
+          if (i === currentSlide - 1) dot.classList.add('prev');
+          if (i === currentSlide + 1) dot.classList.add('next');
+        });
+
+        /* centre active dot */
+        const activeDot = dots[currentSlide];
+        const containerCenter = dotsTrack.parentElement.clientWidth / 2;
+        const dotCenter = activeDot.offsetLeft + activeDot.offsetWidth / 2;
+        dotsTrack.style.transform = `translateX(${Math.round(containerCenter - dotCenter)}px)`;
+      }
+
+      nextBtn.onclick = () => {
+        goToSlide(currentSlide + 1);
+        resetAutoplay();
+      };
+      prevBtn.onclick = () => {
+        goToSlide(currentSlide - 1);
+        resetAutoplay();
+      };
+
+      updateDots();
+
+      /* autoplay every 3 seconds */
+      let autoplay = setInterval(() => goToSlide(currentSlide + 1), 3000);
+      function resetAutoplay() {
+        clearInterval(autoplay);
+        autoplay = setInterval(() => goToSlide(currentSlide + 1), 3000);
+      }
+    });
+  });
+</script>
+
 {% schema %}
 {
   "name": "Testimonials Home",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Section subheading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Testimonials Home"

@@ -243,5 +243,7 @@
     .shoppable_videos-container-top-image_strip {
         top: -2px;
     }
-
+.shoppable_videos-container .card__heading.h5 a{
+    font-size: 12px;
+}
 }
