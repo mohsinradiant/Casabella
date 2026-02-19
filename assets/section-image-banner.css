@@ -455,13 +455,11 @@
 } */
 .banner__buttons {
   display: flex;
-  width: fit-content;
   position: absolute;
-  top: 58%;
-  left: 24%;
-  /* transform: translate(-191%, 84%); */
+  top: 59%;
+  left: 20.5%;
   aspect-ratio: 142.48 / 32;
-  width: 13.5%;
+  width: 16%;
 }
 
 .banner__buttons a {
