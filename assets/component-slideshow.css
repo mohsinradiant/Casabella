@@ -10,7 +10,7 @@ slideshow-component .slideshow.banner {
   margin: 0;
   gap: 0;
   overflow-y: hidden;
-  aspect-ratio: 1680 / 600 !important;
+  aspect-ratio: 1680 / 680 !important;
   min-height: unset !important;
 }
 

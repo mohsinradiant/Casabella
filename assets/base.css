@@ -500,7 +500,7 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-family: inherit;
   letter-spacing: 0;
 }
@@ -2649,8 +2649,8 @@ input[type='checkbox'] {
 }
 
 .header__icon .svg-wrapper {
-  width: 27px;
-  height: 27px;
+  width: 35px;
+  height: 35px;
 }
 
 .header__icon::after {
@@ -2706,8 +2706,8 @@ details[open] .header__icon-close {
 
 account-icon {
   display: flex;
-  width: 27px;
-  height: 27px;
+  width: 35px;
+  height: 35px;
 }
 
 /* Search */

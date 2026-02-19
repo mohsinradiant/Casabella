@@ -16,7 +16,7 @@
 .collection-strip .section-heading {
     text-align: center;
     color: #5A1E2B;
-    font-size: 42px;
+    font-size: 45px;
     margin: 0;
     letter-spacing: 0;
     line-height: 1;
@@ -24,7 +24,7 @@
 
 .collection-strip .section-subheading {
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 0;
     color: #5A1E2B;
     margin-bottom: 30px;
@@ -59,7 +59,7 @@
 
 /* product card wrapper */
 .collection-strip-item {
-    width: 184px;
+    width: 18.7%;
     flex-shrink: 0;
 }
 
@@ -246,7 +246,7 @@
     margin-bottom: 7px;
 }
 
-.card__heading.h5 a{
+.card__heading.h5 a {
     color: #282122 !important;
 }
 

@@ -123,7 +123,7 @@
 }
 
 .shoppable_videos-container-bottom-image_flower {
-    width: 100px;
+    width: 120px;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -133,7 +133,7 @@
 }
 
 .shoppable_videos-container-bottom-image_rotating {
-    width: 160px;
+    width: 170px;
     position: absolute;
     bottom: -64px;
     left: 50%;
@@ -204,11 +204,16 @@
 .shoppable_videos-container .section-heading {
     text-align: center;
     color: #5A1E2B;
-    font-size: 42px;
+    font-size: 45px;
     margin: 0 0 30px;
     letter-spacing: 0;
     line-height: 1;
     font-family: 'Ethnic';
+}
+
+.shoppable_videos-container .card__heading.h5 a {
+    font-weight: 400;
+    color: #262121;
 }
 
 .shoppable_videos-container .section-caption {
