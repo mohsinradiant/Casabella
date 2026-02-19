@@ -187,7 +187,7 @@
 
 .facets__heading {
   display: block;
-  color: #5A1E2B;
+  color: #543030;
   font-size: 19px !important;
   font-weight: 700;
   margin: -1.5rem 2rem 0 0;
@@ -340,7 +340,7 @@
 /* Hover/focus state */
 .facets-layout-list .facets__label:hover .facet-checkbox__text-label,
 .facets-layout-list input:focus~.facet-checkbox__text-label {
-  color: #5A1E2B;
+  color: #543030;
   font-weight: 700;
 }
 
@@ -351,12 +351,12 @@
 }
 
 .facet-checkbox__text-label-categories:hover {
-  color: #5A1E2B;
+  color: #543030;
   font-weight: 700;
 }
 
 .is-active-category {
-  color: #5A1E2B !important;
+  color: #543030 !important;
   font-weight: 700;
   text-decoration: underline;
 }
@@ -485,7 +485,7 @@
 .facets__label:hover,
 .facets__label.active,
 .facets__label:has(:focus-visible) {
-  color: #5A1E2B;
+  color: #543030;
   font-weight: 600;
 }
 

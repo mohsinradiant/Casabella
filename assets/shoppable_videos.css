@@ -41,7 +41,7 @@
 }
 
 .shoppable_videos-container .product-card-wrapper .card--standard .quick-add__submit {
-    color: #5A1E2B !important;
+    color: #543030 !important;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 11px;
@@ -54,7 +54,7 @@
 
 .shoppable_videos-container .product-card-wrapper .card--standard .quick-add__submit:hover {
     color: #fff !important;
-    background-color: #5A1E2B !important;
+    background-color: #543030 !important;
     border: none !important;
     transition: all ease-in 0.3s;
 }
@@ -203,7 +203,7 @@
 
 .shoppable_videos-container .section-heading {
     text-align: center;
-    color: #5A1E2B;
+    color: #543030;
     font-size: 45px;
     margin: 0 0 30px;
     letter-spacing: 0;

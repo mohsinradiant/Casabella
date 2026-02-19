@@ -1054,6 +1054,12 @@ summary::-webkit-details-marker {
     width: 100%;
   }
 
+  .button--secondary span {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0;
+  }
+
   .grid--peek.slider--mobile .grid__item {
     box-sizing: content-box;
     margin: 0;
@@ -1198,7 +1204,7 @@ deferred-media {
 }
 
 .button--secondary {
-  background-color: #5A1E2B !important;
+  background-color: #543030 !important;
   border-radius: 8px !important;
   border: none !important;
   color: #fff !important;
@@ -1209,8 +1215,8 @@ deferred-media {
 
 .button--secondary:hover {
   background-color: #fff !important;
-  color: #5A1E2B !important;
-  border: solid 2px #5A1E2B !important;
+  color: #543030 !important;
+  border: solid 2px #543030 !important;
 }
 
 .button--secondary img {
@@ -1245,7 +1251,8 @@ deferred-media {
 .low-stock-warning {
   font-weight: 600;
   color: #282122;
-  font-size: 12px;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 .low-stock-warning span {
@@ -1272,7 +1279,7 @@ button.shopify-payment-button__button--unbranded {
   /* --border-opacity: calc(1 - var(--buttons-border-opacity)); */
   /* border-radius: var(--buttons-radius-outset); */
   position: relative;
-  border: solid 2px #5A1E2B;
+  border: solid 2px #543030;
   border-radius: 8px;
   color: #282122;
   background: transparent;
@@ -1290,14 +1297,17 @@ button.shopify-payment-button__button--unbranded {
 
 .custom-buy-now {
   width: 50%;
-  height: calc(4.5rem + var(--buttons-border-width) * 2);
   transition: all ease-in .2s !important;
   cursor: pointer;
+  font-size: 11px;
+  font-family: 'outfit';
+  padding-top: calc(2rem - 2px);
+  padding-bottom: calc(2rem - 2px);
 }
 
 
 .custom-buy-now:hover {
-  background-color: #5A1E2B !important;
+  background-color: #543030 !important;
   color: #fff !important;
   border: solid 2px #fff !important;
 }
@@ -1982,11 +1992,12 @@ input[type='checkbox'] {
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
-  width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+  width: calc(16rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
   display: flex;
   border-radius: var(--inputs-radius);
   /* min-height: calc((var(--inputs-border-width) * 2) + 4.5rem); */
-  min-height: fit-content;
+  min-height: 55px;
+  align-items: center;
 }
 
 .quantity:after {
@@ -2468,6 +2479,14 @@ input[type='checkbox'] {
 }
 
 @media screen and (max-width: 749px) {
+  .quantity {
+    width: calc(11rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+  }
+
+  .quantity__button {
+    width: calc(4rem / var(--font-body-scale));
+  }
+
   .header--has-app {
     grid-template-columns: auto 1fr auto;
   }

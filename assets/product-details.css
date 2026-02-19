@@ -49,12 +49,13 @@
 
 .product-details_pdp-inner_content {
     opacity: .8;
-    font-size: 13px;
-    line-height: 1.3;
+    font-size: 15px;
+    line-height: 1.6;
     font-weight: 400;
     color: #403638;
     padding-right: 40px;
     margin: 10px 0 0 0;
+    letter-spacing: .4px;
 }
 
 .product-details_pdp-left ul {
@@ -78,8 +79,9 @@
 }
 
 .product-details_pdp-right-row-name {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.3;
+    letter-spacing: .4px;
     font-weight: 600;
     color: #403638;
     margin: 0;
@@ -87,11 +89,12 @@
 
 .product-details_pdp-right-row-value {
     opacity: .8;
-    font-size: 13px;
     line-height: 1.3;
     font-weight: 400;
     color: #403638;
     margin: 0;
+    font-size: 15px;
+    letter-spacing: .4px;
 }
 
 .product-details_pdp-right .product-details_pdp-left_heading {
@@ -101,7 +104,7 @@
 .jm-review-widget-sidebar-header__sidebar .jm-review-widget-sidebar-header__title {
     font-family: 'Ethnic';
     font-weight: 400;
-    color: #5A1E2B;
+    color: #543030;
     font-size: 30px;
 }
 
@@ -128,7 +131,7 @@
 
 .related-products__heading {
     font-weight: 400;
-    color: #5A1E2B;
+    color: #543030;
     font-size: 36px;
     text-align: center;
 }

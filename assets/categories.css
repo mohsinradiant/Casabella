@@ -18,7 +18,7 @@
 }
 
 .categories-scroller-title {
-    color: #5A1E2B;
+    color: #543030;
     font-size: 3rem;
     text-align: center;
     margin-bottom: 15px;
@@ -71,7 +71,7 @@
 .category-name {
     margin-top: 15px;
     text-transform: uppercase;
-    color: #5A1E2B;
+    color: #543030;
     font-weight: 600;
     font-size: 12px;
     text-align: center;
@@ -236,7 +236,7 @@
 
 @media (max-width: 768px) {
     .categories-scroller-title {
-        color: #5A1E2B;
+        color: #543030;
         font-size: 2.3rem;
         text-align: center;
         margin-bottom: 15px;

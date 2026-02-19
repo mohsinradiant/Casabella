@@ -8,9 +8,24 @@
   margin: 0 0 3rem;
 }
 
+.related-products ul {
+  gap: 3%;
+}
+
+.related-products ul li {
+  width: 22.6% !important;
+  flex: unset;
+  min-width: unset;
+  max-width: unset !important;
+}
+
 @media(max-width: 756px) {
   .related-products {
     padding-top: 35px !important;
     padding-bottom: 35px !important;
+  }
+
+  .related-products ul li {
+    width: 48.5% !important;
   }
 }

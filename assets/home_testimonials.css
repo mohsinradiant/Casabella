@@ -7,7 +7,7 @@
 
 .testimonials-home-container .section-heading {
     text-align: center;
-    color: #5A1E2B;
+    color: #543030;
     font-size: 42px;
     margin: 0;
     letter-spacing: 0;
@@ -26,7 +26,7 @@
     text-align: center;
     font-size: 16px;
     margin: 10px auto 0;
-    color: #5A1E2B;
+    color: #543030;
     margin-bottom: 43px;
     opacity: .7;
     max-width: 490px;
@@ -52,7 +52,7 @@
     padding: 30px 30px 50px;
     position: relative;
     border-radius: 18px;
-    border: solid 1px #5a1e2b40;
+    border: solid 1px #54303040;
 }
 
 .testimonial-card .avatar {

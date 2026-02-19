@@ -10,7 +10,7 @@
 
 .purpose-strip-container .section-heading {
     text-align: center;
-    color: #5A1E2B;
+    color: #543030;
     font-size: 42px;
     margin: 55px 0 0;
     letter-spacing: 0;
@@ -21,7 +21,7 @@
     text-align: center;
     font-size: 16px;
     margin: 10px auto 0;
-    color: #5A1E2B;
+    color: #543030;
     margin-bottom: 43px;
     opacity: .7;
     max-width: 490px;
@@ -64,7 +64,7 @@
 }
 
 .purpose-strip-item-text-container p:nth-of-type(1) {
-    color: #5A1E2B;
+    color: #543030;
     font-size: 33px;
     letter-spacing: 0;
     line-height: 1;
