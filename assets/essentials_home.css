@@ -8,7 +8,7 @@
 
 .essentials-strip-bg-top-image {
     position: absolute;
-    top: -14px;
+    top: -16px;
     left: 0;
     width: 100%;
     height: auto;
@@ -139,7 +139,7 @@
 
 .essentials-strip-bottom-cta {
     display: block;
-    margin: 30px auto 120px;
+    margin: 30px auto 145px;
     text-align: center;
     text-decoration: underline;
     color: #fff;
