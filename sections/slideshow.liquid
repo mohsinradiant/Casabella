@@ -152,16 +152,16 @@
               endif
             -%}
             {%- if forloop.first %}
-              {{
-                block.settings.image
-                | image_url: width: 10000
-                | image_tag: fetchpriority: fetch_priority, class: 'slideshow__desktop-image'
-              }}
             {%- else -%}
               {{
                 block.settings.image
-                | image_url: width: 10000
-                | image_tag: loading: 'lazy', class: 'slideshow__desktop-image'
+                | image_url: width: 3840
+                | image_tag:
+                  loading: 'lazy',
+                  height: height,
+                  sizes: sizes,
+                  widths: widths,
+                  class: 'slideshow__desktop-image'
               }}
             {%- endif -%}
           {%- else -%}
