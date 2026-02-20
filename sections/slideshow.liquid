@@ -154,7 +154,7 @@
             {%- if forloop.first %}
               {{
                 block.settings.image
-                | image_url: 'master'
+                | image_url: width: 10000
                 | image_tag:
                   height: height,
                   sizes: sizes,
@@ -165,7 +165,7 @@
             {%- else -%}
               {{
                 block.settings.image
-                | image_url: 'master'
+                | image_url: width: 10000
                 | image_tag:
                   loading: 'lazy',
                   height: height,
