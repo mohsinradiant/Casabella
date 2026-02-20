@@ -62,12 +62,10 @@
     const items = [...scroller.children];
     if (!items.length) return;
 
-    const itemsPerSlide = 3;
-    const itemGap = 60;
-    const itemWidth = items[0].offsetWidth;
-    const slideWidth = (itemWidth + itemGap) * itemsPerSlide;
-
-    const totalSlides = Math.ceil(items.length / itemsPerSlide);
+    // use the visible container width as one slide step
+    const slideWidth = scroller.clientWidth;
+    // total number of positions we can scroll to (including partial final slide)
+    const totalSlides = Math.ceil(scroller.scrollWidth / slideWidth);
     let currentSlide = 0;
 
     /* create dots */
