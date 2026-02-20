@@ -72,26 +72,26 @@
             "menu": "company"
           }
         },
-        "link_list_dd3gjf": {
-          "type": "link_list",
-          "settings": {
-            "heading": "CATEGORIES",
-            "menu": "categories"
-          }
-        },
         "link_list_NgUyKw": {
           "type": "link_list",
           "settings": {
             "heading": "COLLECTIONS",
             "menu": "collections"
           }
+        },
+        "link_list_dd3gjf": {
+          "type": "link_list",
+          "settings": {
+            "heading": "CATEGORIES",
+            "menu": "categories"
+          }
         }
       },
       "block_order": [
         "brand_information_cEhgGJ",
         "link_list_793N86",
-        "link_list_dd3gjf",
-        "link_list_NgUyKw"
+        "link_list_NgUyKw",
+        "link_list_dd3gjf"
       ],
       "settings": {
         "color_scheme": "scheme-a4f268cd-da40-41e0-a40b-a21e7f9a2e4e",
