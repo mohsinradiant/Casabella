@@ -76,12 +76,6 @@
           const items = [...scroller.children];
           if (!items.length) return;
 
-          const itemsPerSlide = 1;
-          // gap set in CSS (.essentials-strip-wrapper gap)
-          const itemGap = 20;
-          const itemWidth = items[0].offsetWidth;
-          const slideWidth = (itemWidth + itemGap) * itemsPerSlide;
-
           const totalSlides = items.length;
           let currentSlide = 0;
 
@@ -98,7 +92,8 @@
 
           function goToSlide(index) {
             currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
-            scroller.scrollTo({ left: slideWidth * currentSlide, behavior: 'smooth' });
+            const targetOffset = items[currentSlide].offsetLeft;
+            scroller.scrollTo({ left: targetOffset, behavior: 'smooth' });
             updateDots();
           }
 
@@ -118,8 +113,17 @@
 
           // sync dots on manual scroll
           scroller.addEventListener('scroll', () => {
-            const index = Math.round(scroller.scrollLeft / slideWidth);
-            if (index !== currentSlide) goToSlide(index);
+            // calculate nearest slide by comparing scrollLeft to item offsets
+            let nearest = 0;
+            let minDiff = Infinity;
+            items.forEach((el, idx) => {
+              const diff = Math.abs(scroller.scrollLeft - el.offsetLeft);
+              if (diff < minDiff) {
+                minDiff = diff;
+                nearest = idx;
+              }
+            });
+            if (nearest !== currentSlide) goToSlide(nearest);
           });
 
           updateDots();
