@@ -152,11 +152,11 @@
               endif
             -%}
             {%- if forloop.first %}
-              {{
-                block.settings.image
-                | image_url: width: 6720
-                | image_tag: class: 'slideshow__desktop-image', loading: 'eager'
-              }}
+              <img
+                src="{{ block.settings.image | file_url }}"
+                class="slideshow__desktop-image"
+                loading="eager"
+              >
             {%- else -%}
               {{
                 block.settings.image
