@@ -1782,7 +1782,10 @@ details[open]>.share-button__fallback {
   outline: 0;
   border-radius: var(--inputs-radius);
 }
+.field__input:focus{
+  box-shadow: none !important;
 
+}
 .localization-form__select:focus {
   outline: 0;
   box-shadow: none;
