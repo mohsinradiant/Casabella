@@ -944,7 +944,7 @@ a.product__text {
     margin: 0;
   }
 
-  .product__info-container .product-form__input label {
+  .product__info-container .product-form__input label, .low-stock-warning {
     font-size: 15px;
   }
 
