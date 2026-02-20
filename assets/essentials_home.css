@@ -12,7 +12,7 @@
     left: 0;
     width: 100%;
     height: auto;
-    z-index: 2;
+    z-index: 3;
 }
 
 .essentials-strip-bg-image {
@@ -164,9 +164,11 @@
     z-index: 0;
     pointer-events: none;
 }
-.essentials-dots-track{
+
+.essentials-dots-track {
     display: none;
 }
+
 @media(max-width:756px) {
     .essentials-strip-container .section-heading {
         font-size: 2.3rem !important;
@@ -186,7 +188,8 @@
 
     .essentials-strip-wrapper {
         display: flex;
-        justify-content: flex-start; /* start instead of center */
+        justify-content: flex-start;
+        /* start instead of center */
         gap: 20px;
         overflow-x: auto;
         padding: 10px 0;
@@ -194,6 +197,7 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
     .essentials-strip-wrapper::-webkit-scrollbar {
         display: none;
     }
@@ -229,6 +233,7 @@
         justify-content: center;
         z-index: 3;
     }
+
     .essentials-dots-track {
         display: flex;
         gap: 8px;
@@ -236,6 +241,7 @@
         will-change: transform;
         margin-left: -84px;
     }
+
     .essentials-dots button {
         all: unset;
         width: 6px;
@@ -248,11 +254,13 @@
         transform: scale(0.9);
         transition: transform 0.25s ease, opacity 0.25s ease;
     }
+
     .essentials-dots button.active {
         background-color: #984B5B;
         transform: scale(1.2);
         opacity: 1;
     }
+
     .essentials-dots button.prev,
     .essentials-dots button.next {
         transform: scale(0.9);
