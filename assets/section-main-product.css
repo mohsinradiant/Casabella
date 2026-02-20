@@ -493,9 +493,11 @@ a.product__text {
     margin-bottom: 3rem;
     width: calc(100% + 4rem);
   }
-.product__title {
-  margin-top: 10px;
-}
+
+  .product__title {
+    margin-top: 10px;
+  }
+
   .product__media-wrapper slider-component:not(.thumbnail-slider--no-slide) {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
@@ -940,6 +942,10 @@ a.product__text {
     overflow-x: auto;
     white-space: nowrap;
     margin: 0;
+  }
+
+  .product__info-container .product-form__input label {
+    font-size: 15px;
   }
 
   .product-media-modal__dialog .global-media-settings,
