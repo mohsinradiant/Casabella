@@ -65,7 +65,69 @@
         src="https://cdn.shopify.com/s/files/1/0752/2510/4562/files/dfsf_13.png?v=1769756309"
       >
     </div>
-  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // only initialize on mobile widths
+    if (window.innerWidth > 756) return;
+
+    document.querySelectorAll('.essentials-strip').forEach((section) => {
+      const scroller = section.querySelector('#essentialsStripScroller');
+      const dotsTrack = section.querySelector('#essentialsDots');
+      if (!scroller || !dotsTrack) return;
+
+      const items = [...scroller.children];
+      if (!items.length) return;
+
+      const itemsPerSlide = 1;
+      // gap set in CSS (.essentials-strip-wrapper gap)
+      const itemGap = 20;
+      const itemWidth = items[0].offsetWidth;
+      const slideWidth = (itemWidth + itemGap) * itemsPerSlide;
+
+      const totalSlides = items.length;
+      let currentSlide = 0;
+
+      /* create dots */
+      dotsTrack.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToSlide(i);
+        dotsTrack.appendChild(dot);
+      }
+
+      const dots = [...dotsTrack.children];
+
+      function goToSlide(index) {
+        currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+        scroller.scrollTo({ left: slideWidth * currentSlide, behavior: 'smooth' });
+        updateDots();
+      }
+
+      function updateDots() {
+        dots.forEach((dot, i) => {
+          dot.classList.remove('active', 'prev', 'next');
+          if (i === currentSlide) dot.classList.add('active');
+          if (i === currentSlide - 1) dot.classList.add('prev');
+          if (i === currentSlide + 1) dot.classList.add('next');
+        });
+
+        const activeDot = dots[currentSlide];
+        const containerCenter = dotsTrack.parentElement.clientWidth / 2;
+        const dotCenter = activeDot.offsetLeft + activeDot.offsetWidth / 2;
+        dotsTrack.style.transform = `translateX(${Math.round(containerCenter - dotCenter)}px)`;
+      }
+
+      // sync dots on manual scroll
+      scroller.addEventListener('scroll', () => {
+        const index = Math.round(scroller.scrollLeft / slideWidth);
+        if (index !== currentSlide) goToSlide(index);
+      });
+
+      updateDots();
+    });
+  });
+</script>  </div>
 </div>
 {% schema %}
 {

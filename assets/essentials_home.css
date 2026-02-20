@@ -61,6 +61,15 @@
     z-index: 1;
 }
 
+/* wrapper mirrors the old .essentials-strip-relative behaviour by default */
+.essentials-strip-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
 .essentials-strip-item {
     display: flex;
     justify-content: start;
