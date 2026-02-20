@@ -61,9 +61,11 @@
     text-decoration: none;
     color: inherit;
 }
-.category-item:hover{
-    scale
+
+.category-item:hover {
+    scale: 1.05;
 }
+
 .category-item img {
     width: 90%;
     height: auto;
