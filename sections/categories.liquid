@@ -110,6 +110,23 @@
     nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
     prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
 
+    // auto-scroll every 3 seconds and loop back to start for infinite carousel
+    let autoScrollInterval = setInterval(() => {
+      let next = currentSlide + 1;
+      if (next >= totalSlides) next = 0;
+      goToSlide(next);
+    }, 3000);
+
+    // optionally pause on hover
+    scroller.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+    scroller.addEventListener('mouseleave', () => {
+      autoScrollInterval = setInterval(() => {
+        let next = currentSlide + 1;
+        if (next >= totalSlides) next = 0;
+        goToSlide(next);
+      }, 3000);
+    });
+
     updateDots();
   });
 </script>
