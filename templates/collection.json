@@ -33,56 +33,56 @@
           "type": "product_category",
           "settings": {
             "name": "Best Sellers",
-            "url": "shopify://collections/frontpage"
+            "url": "shopify://collections/best-sellers"
           }
         },
         "product_category_7PVELU": {
           "type": "product_category",
           "settings": {
             "name": "Wall Decor",
-            "url": "shopify://collections/frontpage"
+            "url": "shopify://collections/wall-decor"
           }
         },
         "product_category_3pYr48": {
           "type": "product_category",
           "settings": {
             "name": "Mirrors and Lighting",
-            "url": "shopify://collections/frontpage"
+            "url": "shopify://collections/mirrors-and-lighting"
           }
         },
         "product_category_8EgHbg": {
           "type": "product_category",
           "settings": {
             "name": "The Wood Edit",
-            "url": "shopify://collections/frontpage"
+            "url": "shopify://collections/the-wood-edit"
           }
         },
         "product_category_4p8qty": {
           "type": "product_category",
           "settings": {
             "name": "Jharokhas",
-            "url": "shopify://collections/frontpage"
+            "url": "shopify://collections/jharokhas"
           }
         },
         "product_category_nQwn9H": {
           "type": "product_category",
           "settings": {
             "name": "Puja and Sacred Decor",
-            "url": "shopify://collections/frontpage"
+            "url": "shopify://collections/puja-and-sacred-decor"
           }
         },
         "product_category_ycpJMn": {
           "type": "product_category",
           "settings": {
             "name": "Boho/Minimal",
-            "url": "shopify://collections/frontpage"
+            "url": "shopify://collections/boho-minimal"
           }
         },
         "product_category_Axj9N6": {
           "type": "product_category",
           "settings": {
             "name": "Gifting",
-            "url": "shopify://collections/frontpage"
+            "url": "shopify://collections/gifting"
           }
         }
       },
