@@ -4,7 +4,12 @@
     padding-top: 65px;
     padding-bottom: 80px;
 }
-
+.testimonial-card-absolute-image{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: ;
+}
 .testimonials-home-container .section-heading {
     text-align: center;
     color: #543030;
