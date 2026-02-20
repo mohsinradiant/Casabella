@@ -109,7 +109,7 @@
     transition: all 0.2s ease-in;
 }
 
-.purpose-strip-item-text-container:hover a {
+.purpose-strip-item-text-container a:hover {
     scale: 1.02;
     opacity: .7;
 }
