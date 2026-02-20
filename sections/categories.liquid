@@ -67,6 +67,7 @@
     let totalSlides;
     let currentSlide = 0;
     let dots = [];
+    let autoScrollInterval; // declared early for use in resize listener
 
     function calculateMetrics() {
       slideWidth = scroller.clientWidth;
@@ -86,6 +87,16 @@
 
     calculateMetrics();
     createDots();
+
+    // some images may still be loading when DOMContentLoaded fires; re-run on full load
+    window.addEventListener('load', () => {
+      const prev = totalSlides;
+      calculateMetrics();
+      if (totalSlides !== prev) {
+        createDots();
+        updateDots();
+      }
+    });
 
     function goToSlide(index) {
       currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
@@ -135,7 +146,7 @@
     prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
 
     // auto-scroll every 3 seconds and loop back to start for infinite carousel
-    let autoScrollInterval = setInterval(() => {
+    autoScrollInterval = setInterval(() => {
       let next = currentSlide + 1;
       if (next >= totalSlides) next = 0;
       goToSlide(next);
