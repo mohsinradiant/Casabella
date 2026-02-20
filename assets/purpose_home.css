@@ -110,7 +110,8 @@
 }
 
 .purpose-strip-item-text-container a:hover {
-    scale: 1.03;
+    scale: 1.02;
+    opacity: .7;
 }
 
 .purpose-strip-relative-flower__left {
