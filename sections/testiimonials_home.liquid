@@ -89,10 +89,7 @@
         // items may resize on responsive breakpoints, recalc width each time
         const itemWidth = items[0].offsetWidth;
         // determine how many items fit in the visible area; ensure at least 1
-        itemsPerSlide = Math.max(
-          1,
-          Math.floor((scroller.clientWidth + itemGap) / (itemWidth + itemGap))
-        );
+        itemsPerSlide = Math.max(1, Math.floor((scroller.clientWidth + itemGap) / (itemWidth + itemGap)));
         slideWidth = (itemWidth + itemGap) * itemsPerSlide;
         totalSlides = Math.ceil(items.length / itemsPerSlide);
       }
