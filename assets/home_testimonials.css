@@ -161,7 +161,9 @@
     .testimonials-home-container .section-heading {
         font-size: 2.3rem;
     }
-
+.testimonials-home-container-top-image_strip {
+    top: -4px;
+}
     .testimonials-home-container .section-subheading {
         font-size: 1.3rem;
         margin-bottom: 20px;
