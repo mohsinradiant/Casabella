@@ -221,7 +221,7 @@
 
     /* dots styles (mimic collection strip) */
     .essentials-dots {
-        margin: 0 auto;
+        margin: 10 auto 0;
         width: 90px;
         display: flex;
         justify-content: center;
