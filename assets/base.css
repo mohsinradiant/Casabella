@@ -1782,10 +1782,12 @@ details[open]>.share-button__fallback {
   outline: 0;
   border-radius: var(--inputs-radius);
 }
-.header__search .field__input:focus{
+
+.header__search .field__input:focus {
   box-shadow: none !important;
 
 }
+
 .localization-form__select:focus {
   outline: 0;
   box-shadow: none;
@@ -3152,6 +3154,10 @@ details-disclosure>details {
     border-left: none;
     border-right: none;
     border-radius: 0;
+  }
+
+  .header__heading-logo-wrapper {
+    width: 73%;
   }
 
   .content-container--full-width-mobile:after {
