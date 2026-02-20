@@ -62,23 +62,30 @@
     const items = [...scroller.children];
     if (!items.length) return;
 
-    // use the visible container width as one slide step
-    const slideWidth = scroller.clientWidth;
-    // total number of positions we can scroll to (including partial final slide)
-    const totalSlides = Math.ceil(scroller.scrollWidth / slideWidth);
+    // variables that can change when the viewport/resizing occurs
+    let slideWidth;
+    let totalSlides;
     let currentSlide = 0;
+    let dots = [];
 
-    /* create dots */
-    dotsTrack.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement('button');
-      if (i === 0) dot.classList.add('active');
-
-      dot.addEventListener('click', () => goToSlide(i));
-      dotsTrack.appendChild(dot);
+    function calculateMetrics() {
+      slideWidth = scroller.clientWidth;
+      totalSlides = Math.ceil(scroller.scrollWidth / slideWidth);
     }
 
-    const dots = [...dotsTrack.children];
+    function createDots() {
+      dotsTrack.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        if (i === currentSlide) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsTrack.appendChild(dot);
+      }
+      dots = [...dotsTrack.children];
+    }
+
+    calculateMetrics();
+    createDots();
 
     function goToSlide(index) {
       currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
@@ -104,6 +111,25 @@
       const offset = dotsTrack.parentElement.offsetWidth / 2 - dotWidth / 2;
       dotsTrack.style.transform = `translateX(${offset - currentSlide * dotWidth}px)`;
     }
+
+    // recalc on resize and recreate dots if needed
+    window.addEventListener('resize', () => {
+      const previousTotal = totalSlides;
+      calculateMetrics();
+      if (totalSlides !== previousTotal) {
+        // ensure currentSlide remains in bounds
+        currentSlide = Math.min(currentSlide, totalSlides - 1);
+        createDots();
+        updateDots();
+      }
+      // restart auto-scroll interval so it stays consistent
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = setInterval(() => {
+        let next = currentSlide + 1;
+        if (next >= totalSlides) next = 0;
+        goToSlide(next);
+      }, 3000);
+    });
 
     nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
     prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
