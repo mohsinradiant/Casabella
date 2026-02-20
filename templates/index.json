@@ -15,7 +15,7 @@
         "slide_cbkyDK": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banner2x-Picsart-AiImageEnhancer.jpg",
+            "image": "shopify://shop_images/banner4x.jpg",
             "mobile_image": "shopify://shop_images/mobile-banner.jpg",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -113,7 +113,7 @@
         "category_Rp8Wxn": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "wall-decor",
             "image": "shopify://shop_images/Rectangle_5.png",
             "text": "Wall Decor"
           }
@@ -121,7 +121,7 @@
         "category_ztJixK": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "mirrors-and-lighting",
             "image": "shopify://shop_images/Rectangle_6.png",
             "text": "Mirrors and Lighting"
           }
@@ -129,7 +129,7 @@
         "category_fmDdbD": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "the-wood-edit",
             "image": "shopify://shop_images/Rectangle_7.png",
             "text": "The Wood Edit"
           }
@@ -137,7 +137,7 @@
         "category_TYjgdJ": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "jharokhas",
             "image": "shopify://shop_images/Rectangle_8.png",
             "text": "Jharokhas"
           }
@@ -145,7 +145,7 @@
         "category_CNVbJL": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "puja-and-sacred-decor",
             "image": "shopify://shop_images/Rectangle_9.png",
             "text": "Puja and Sacred Decor"
           }
@@ -153,7 +153,7 @@
         "category_MgJgza": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "boho-minimal",
             "image": "shopify://shop_images/Rectangle_10.png",
             "text": "Boho/Minimal"
           }
@@ -161,7 +161,7 @@
         "category_CE9YbR": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "gifting",
             "image": "shopify://shop_images/Rectangle_11.png",
             "text": "Gifting"
           }
@@ -169,7 +169,7 @@
         "category_xP4UbE": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "gifting",
             "image": "shopify://shop_images/Rectangle_11.png",
             "text": "Gifting"
           }
@@ -177,7 +177,7 @@
         "category_Bahxj8": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "gifting",
             "image": "shopify://shop_images/Rectangle_11.png",
             "text": "Gifting"
           }
@@ -295,7 +295,7 @@
         "section_caption": "TRENDING NOW",
         "section_heading": "The Moment’s Favourites",
         "section_cta": "all trending products",
-        "section_cta_link": "shopify://collections"
+        "section_cta_link": "shopify://collections/best-sellers"
       }
     },
     "collection_strip_AQwXhb": {
@@ -306,7 +306,7 @@
         "section_subheading": "Chosen repeatedly for modern Indian homes.",
         "collection": "new-arrivals",
         "cta": "VIEW ALL BEST SELLERS",
-        "cta_link": "shopify://collections/new-arrivals"
+        "cta_link": "shopify://collections/best-sellers"
       }
     },
     "essentials_home_JLPPQ6": {
@@ -356,7 +356,7 @@
         "section_heading": "Handpicked Essentials",
         "section_subheading": "Timeless designs rooted in tradition, selected for contemporary spaces.",
         "cta": "ALL HANDPICKED PRODUCTS",
-        "cta_link": "shopify://collections/new-arrivals"
+        "cta_link": "shopify://collections/all-products"
       }
     },
     "purpose_home_AtXGEy": {
@@ -370,7 +370,7 @@
             "block_heading_2": "Lighting",
             "block_subheading": "Light, reflection, and form—crafted to elevate everyday spaces.",
             "block_cta": "Brighten Your Space",
-            "block_url": "new-arrivals"
+            "block_url": "mirrors-and-lighting"
           }
         },
         "essential_collection_wHnC9i": {
@@ -381,7 +381,7 @@
             "block_heading_2": "Gifting",
             "block_subheading": "Meaningful decor, thoughtfully chosen for celebrations and milestones.",
             "block_cta": "EXPLORE GIFTS",
-            "block_url": "new-arrivals"
+            "block_url": "gifting"
           }
         },
         "essential_collection_DkEYLE": {
@@ -392,7 +392,7 @@
             "block_heading_2": "Jharokhas",
             "block_subheading": "Light, reflection, and form—crafted to elevate everyday spaces.",
             "block_cta": "VIEW PRODUCTS",
-            "block_url": "new-arrivals"
+            "block_url": "wall-decor"
           }
         },
         "essential_collection_9qXrPb": {
@@ -403,7 +403,7 @@
             "block_heading_2": "Living Area",
             "block_subheading": "Meaningful decor, thoughtfully chosen for celebrations and milestones.",
             "block_cta": "VIEW PRODUCTS",
-            "block_url": "new-arrivals"
+            "block_url": "the-wood-edit"
           }
         }
       },
