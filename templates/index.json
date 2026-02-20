@@ -449,30 +449,30 @@
             "rating": 5
           }
         },
-        "testimonial_MxfGwb": {
+        "testimonial_PFmLtt": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/4945750.png",
+            "avatar": "shopify://shop_images/Rectangle_551.png",
             "name": "Siddharth Aggarwal",
             "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
             "rating": 5
           }
         },
-        "testimonial_wrVwKU": {
+        "testimonial_NFzJX7": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/4945750.png",
-            "name": "Siddharth Aggarwal",
-            "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
+            "avatar": "shopify://shop_images/Rectangle_551-1.png",
+            "name": "Nitesh Jain",
+            "quote": "Our consultant understood vision instantly & suggested destinations we hadn’t even considered. Very professional.",
             "rating": 5
           }
         },
-        "testimonial_khn3bB": {
+        "testimonial_bJMKRx": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/4945750.png",
-            "name": "Siddharth Aggarwal",
-            "quote": "The consultation gave us complete clarity on venue, budget, and planning. Worth every rupee.",
+            "avatar": "shopify://shop_images/Rectangle_551-2.png",
+            "name": "Sumita Trivedi",
+            "quote": "In just one session, we avoided months of confusion. The guidance felt structured, honest, and truly luxury-focused.",
             "rating": 5
           }
         }
@@ -481,9 +481,9 @@
         "testimonial_HrE3ry",
         "testimonial_6VFci9",
         "testimonial_RWFqzx",
-        "testimonial_MxfGwb",
-        "testimonial_wrVwKU",
-        "testimonial_khn3bB"
+        "testimonial_PFmLtt",
+        "testimonial_NFzJX7",
+        "testimonial_bJMKRx"
       ],
       "name": "Testimonials Home",
       "settings": {
