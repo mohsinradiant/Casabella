@@ -105,16 +105,7 @@
 }
 
 .purpose-strip-item-text-container a:hover {
-    display: block;
-    margin: 20px auto 0;
-    font-size: 11px;
-    text-decoration: underline;
-    color: #C36075;
-    text-transform: uppercase;
-    text-underline-position: under;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-underline-offset: 2px;
+    scale: 1.;
 }
 
 .purpose-strip-relative-flower__left {
