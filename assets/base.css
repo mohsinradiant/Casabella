@@ -1782,7 +1782,7 @@ details[open]>.share-button__fallback {
   outline: 0;
   border-radius: var(--inputs-radius);
 }
-.field__input:focus{
+.header__search .field__input:focus{
   box-shadow: none !important;
 
 }
