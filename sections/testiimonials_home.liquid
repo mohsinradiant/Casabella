@@ -79,27 +79,42 @@
       const items = [...scroller.children];
       if (!items.length) return;
 
-      const itemsPerSlide = 3;
       const itemGap = 32;
-      const itemWidth = items[0].offsetWidth;
-      const slideWidth = (itemWidth + itemGap) * itemsPerSlide;
-
-      const totalSlides = Math.ceil(items.length / itemsPerSlide);
+      let itemsPerSlide = 3; // fallback
+      let slideWidth = 0;
+      let totalSlides = 0;
       let currentSlide = 0;
 
-      /* create dots */
-      dotsTrack.innerHTML = '';
-      for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('button');
-        if (i === 0) dot.classList.add('active');
-        dot.onclick = () => {
-          goToSlide(i);
-          resetAutoplay();
-        };
-        dotsTrack.appendChild(dot);
+      function calculateSlides() {
+        // items may resize on responsive breakpoints, recalc width each time
+        const itemWidth = items[0].offsetWidth;
+        // determine how many items fit in the visible area; ensure at least 1
+        itemsPerSlide = Math.max(
+          1,
+          Math.floor((scroller.clientWidth + itemGap) / (itemWidth + itemGap))
+        );
+        slideWidth = (itemWidth + itemGap) * itemsPerSlide;
+        totalSlides = Math.ceil(items.length / itemsPerSlide);
       }
 
-      const dots = [...dotsTrack.children];
+      calculateSlides();
+
+      function buildDots() {
+        dotsTrack.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('button');
+          if (i === 0) dot.classList.add('active');
+          dot.onclick = () => {
+            goToSlide(i);
+            resetAutoplay();
+          };
+          dotsTrack.appendChild(dot);
+        }
+      }
+
+      buildDots();
+
+      let dots = [...dotsTrack.children];
 
       function goToSlide(index) {
         currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
@@ -132,6 +147,17 @@
       };
 
       updateDots();
+
+      // recalc on resize to keep dots in sync
+      window.addEventListener('resize', () => {
+        const prevSlide = currentSlide;
+        calculateSlides();
+        buildDots();
+        dots = [...dotsTrack.children];
+        // make sure currentSlide is within bounds
+        currentSlide = Math.min(prevSlide, totalSlides - 1);
+        goToSlide(currentSlide);
+      });
 
       /* autoplay every 3 seconds */
       let autoplay = setInterval(() => goToSlide(currentSlide + 1), 3000);
