@@ -12,18 +12,27 @@
     <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
     <p class="section-subheading">{{ section.settings.section_subheading }}</p>
     <div class="essentials-strip-relative">
-      {% for block in section.blocks %}
-        <div class="essentials-strip-item">
-          <img src="{{block.settings.block_image | image_url }}">
-          <p>{{ block.settings.block_heading_1 }}</p>
-          <p>{{ block.settings.block_heading_2 }}</p>
-          <p>{{ block.settings.block_subheading }}</p>
-          <a href="{{ block.settings.block_url }}" class="essentials-strip-cta">
-            {{ block.settings.block_cta }}
-          </a>
-        </div>
-      {% endfor %}
+      <!-- wrapper for carousel on mobile -->
+      <div class="essentials-strip-wrapper" id="essentialsStripScroller">
+        {% for block in section.blocks %}
+          <div class="essentials-strip-item">
+            <img src="{{block.settings.block_image | image_url }}">
+            <p>{{ block.settings.block_heading_1 }}</p>
+            <p>{{ block.settings.block_heading_2 }}</p>
+            <p>{{ block.settings.block_subheading }}</p>
+            <a href="{{ block.settings.block_url }}" class="essentials-strip-cta">
+              {{ block.settings.block_cta }}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     </div>
+
+    <!-- dots track (only used on mobile carousel) -->
+    <div class="essentials-dots">
+      <div class="essentials-dots-track" id="essentialsDots"></div>
+    </div>
+
     <a href="{{ section.settings.cta_link }}" class="essentials-strip-bottom-cta">
       {{ section.settings.cta }}
     </a>
