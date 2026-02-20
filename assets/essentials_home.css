@@ -61,15 +61,6 @@
     z-index: 1;
 }
 
-/* wrapper mirrors the old .essentials-strip-relative behaviour by default */
-.essentials-strip-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    width: 100%;
-}
-
 .essentials-strip-item {
     display: flex;
     justify-content: start;
@@ -177,27 +168,13 @@
         margin-top: 6px;
     }
 
-    /* carousel wrapper styles */
     .essentials-strip-relative {
-        /* keep flex center on desktop but mobile override below */
-    }
-
-    .essentials-strip-wrapper {
-        display: flex;
-        gap: 20px;
-        overflow-x: auto;
-        padding: 10px 0;
-        scroll-behavior: smooth;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-    .essentials-strip-wrapper::-webkit-scrollbar {
-        display: none;
+        flex-direction: column;
+        gap: 45px;
     }
 
     .essentials-strip-item {
-        flex-shrink: 0;
-        width: 80%;
+        width: 100%;
         padding: 0 40px;
     }
 
@@ -216,43 +193,5 @@
 
     .essentials-strip-item p:nth-of-type(3) {
         font-size: 1.3rem;
-    }
-
-    /* dots styles (mimic collection strip) */
-    .essentials-dots {
-        margin: 0 auto;
-        width: 90px;
-        display: flex;
-        justify-content: center;
-        z-index: 3;
-    }
-    .essentials-dots-track {
-        display: flex;
-        gap: 8px;
-        transition: transform 0.35s ease;
-        will-change: transform;
-        margin-left: -84px;
-    }
-    .essentials-dots button {
-        all: unset;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: #984B5B;
-        opacity: 0.5;
-        cursor: pointer;
-        flex-shrink: 0;
-        transform: scale(0.9);
-        transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-    .essentials-dots button.active {
-        background-color: #984B5B;
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    .essentials-dots button.prev,
-    .essentials-dots button.next {
-        transform: scale(0.9);
-        opacity: 0.8;
     }
 }
