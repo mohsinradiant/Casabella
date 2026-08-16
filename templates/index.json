@@ -21,7 +21,7 @@
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
-            "button_label": "EXPLORE THE COLLECTION",
+            "button_label": "",
             "link": "shopify://collections/new-arrivals",
             "button_style_secondary": true,
             "show_text_box": false,
