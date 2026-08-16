@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Aug_17_2026_04_08_23_AM.png",
-            "mobile_image": "shopify://shop_images/mobile_banner.png",
+            "mobile_image": "shopify://shop_images/mob_sbanner.png",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_size": "h1",
