@@ -131,7 +131,7 @@
           "type": "category",
           "settings": {
             "collection": "the-wood-edit",
-            "image": "shopify://shop_images/5_e7a32d68-bda3-4876-a669-47a2115caea7.png",
+            "image": "shopify://shop_images/download_10_aec1dd8d-b959-4ddd-a75f-fcbb2d25853c.png",
             "text": "The Wood Edit"
           }
         },
@@ -169,11 +169,10 @@
         },
         "category_xP4UbE": {
           "type": "category",
-          "disabled": true,
           "settings": {
             "collection": "gifting",
-            "image": "shopify://shop_images/Rectangle_11.png",
-            "text": "Gifting"
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_17_2026_01_33_17_AM.png",
+            "text": "All Products"
           }
         },
         "category_Bahxj8": {
