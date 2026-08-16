@@ -120,6 +120,7 @@
         },
         "category_ztJixK": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "collection": "mirrors-and-lighting",
             "image": "shopify://shop_images/Rectangle_6.png",
@@ -130,7 +131,7 @@
           "type": "category",
           "settings": {
             "collection": "the-wood-edit",
-            "image": "shopify://shop_images/Rectangle_7.png",
+            "image": "shopify://shop_images/5_e7a32d68-bda3-4876-a669-47a2115caea7.png",
             "text": "The Wood Edit"
           }
         },
@@ -146,7 +147,7 @@
           "type": "category",
           "settings": {
             "collection": "puja-and-sacred-decor",
-            "image": "shopify://shop_images/Rectangle_9.png",
+            "image": "shopify://shop_images/download_18.png",
             "text": "Puja and Sacred Decor"
           }
         },
@@ -154,7 +155,7 @@
           "type": "category",
           "settings": {
             "collection": "boho-minimal",
-            "image": "shopify://shop_images/Rectangle_10.png",
+            "image": "shopify://shop_images/download_12.png",
             "text": "Boho/Minimal"
           }
         },
@@ -162,12 +163,13 @@
           "type": "category",
           "settings": {
             "collection": "gifting",
-            "image": "shopify://shop_images/Rectangle_11.png",
+            "image": "shopify://shop_images/download_27.png",
             "text": "Gifting"
           }
         },
         "category_xP4UbE": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "collection": "gifting",
             "image": "shopify://shop_images/Rectangle_11.png",
@@ -176,6 +178,7 @@
         },
         "category_Bahxj8": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "collection": "gifting",
             "image": "shopify://shop_images/Rectangle_11.png",
