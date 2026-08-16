@@ -22,7 +22,7 @@
             "heading_size": "h1",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/new-arrivals",
+            "link": "shopify://collections/all-products",
             "button_style_secondary": true,
             "show_text_box": false,
             "box_align": "middle-center",
