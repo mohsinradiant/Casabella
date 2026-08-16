@@ -14,6 +14,7 @@
       "blocks": {
         "slide_cbkyDK": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/site_banner_web.png",
             "mobile_image": "shopify://shop_images/mob_sbanner.png",
@@ -30,10 +31,30 @@
             "text_alignment_mobile": "center",
             "color_scheme": ""
           }
+        },
+        "slide_fFdJf7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner2x-Picsart-AiImageEnhancer.jpg",
+            "mobile_image": "shopify://shop_images/mobile-banner.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "Explore the collection",
+            "link": "shopify://collections/all-products",
+            "button_style_secondary": true,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
         }
       },
       "block_order": [
-        "slide_cbkyDK"
+        "slide_cbkyDK",
+        "slide_fFdJf7"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
