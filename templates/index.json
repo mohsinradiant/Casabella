@@ -290,6 +290,7 @@
         "shoppable_video_h43Kpi",
         "shoppable_video_H9dhkM"
       ],
+      "disabled": true,
       "name": "Shoppable Videos",
       "settings": {
         "section_caption": "TRENDING NOW",
@@ -413,6 +414,7 @@
         "essential_collection_DkEYLE",
         "essential_collection_9qXrPb"
       ],
+      "disabled": true,
       "name": "Purpose Home",
       "settings": {
         "section_heading": "Shop by Purpose",
