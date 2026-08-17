@@ -14,7 +14,6 @@
       "blocks": {
         "slide_cbkyDK": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/site_banner_web.png",
             "mobile_image": "shopify://shop_images/mob_sbanner.png",
@@ -34,6 +33,7 @@
         },
         "slide_fFdJf7": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/banner2x-Picsart-AiImageEnhancer.jpg",
             "mobile_image": "shopify://shop_images/mobile-banner.jpg",
